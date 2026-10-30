@@ -311,6 +311,19 @@ footer p{max-width:1100px;margin-top:10px}
 .a-wifi .dot{position:absolute;top:58%;width:12px;height:12px;border-radius:50%;background:var(--red)}
 @keyframes wifi{0%,100%{opacity:.25}50%{opacity:1}}
 
+
+/* warranty */
+.warranty{background:#fff}
+.w-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,110px);align-items:end}
+.w-nums{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(50px,7vw,100px);border-top:1px solid var(--ink)}
+.w-nums>div{padding:34px 30px 30px 0}
+.w-nums>div+div{padding-left:30px;border-left:1px solid var(--line)}
+.w-nums b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(80px,10vw,150px);line-height:.9;color:var(--red)}
+.w-nums .eyebrow{display:block;margin:14px 0 8px;color:var(--mute)}
+.w-foot{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;margin-top:clamp(40px,5vw,70px);padding-top:34px;border-top:1px solid var(--line)}
+.w-foot .quote{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);max-width:640px;padding-left:22px;border-left:2px solid var(--red)}
+@media(max-width:900px){.w-head,.w-foot{grid-template-columns:1fr}.w-nums{grid-template-columns:1fr}.w-nums>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
 /* lightbox */
 #lb{position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:90;display:none;align-items:center;justify-content:center;padding:4vw}
 #lb.open{display:flex}
@@ -519,8 +532,31 @@ footer p{max-width:1100px;margin-top:10px}
         <li>4,523 heated sq ft (2,131 main, 2,392 upper)</li>
         <li>Approx. 0.22 acre homesite</li>
         <li>Built in 2026 by KEEN Building Co</li>
+        <li>10-year Quality Builders Warranty</li>
         <li>Sedgefield, Charlotte 28209</li></ul></div>
     </div>
+  </div>
+</section>
+
+<section class="warranty pad" id="warranty">
+  <div class="wrap">
+    <div class="w-head fade">
+      <div><div class="eyebrow red">Builder Warranty</div><h2 class="h2" style="margin-top:20px">Warranted. Serviced. <em>Stood behind.</em></h2></div>
+      <p class="lead">A KEEN home doesn’t end at closing. 3321 Auburn conveys with a 10-year Quality Builders Warranty, with workmanship, systems and structural coverage in writing, plus KEEN’s own local service team.</p>
+    </div>
+    <div class="w-nums">
+      <div class="fade"><b data-count="1">1</b><span class="eyebrow">Year</span><p>Workmanship coverage on the home’s construction</p></div>
+      <div class="fade"><b data-count="2">2</b><span class="eyebrow">Years</span><p>Systems coverage: electrical, plumbing, HVAC distribution</p></div>
+      <div class="fade"><b data-count="10">10</b><span class="eyebrow">Years</span><p>Structural warranty on the load-bearing elements of the home</p></div>
+    </div>
+    <div class="w-foot fade">
+      <p class="quote">KEEN is family-owned and based right here in Charlotte, so warranty service isn’t a call center. It’s the team that built the house.</p>
+      <div class="btns" style="margin-top:0">
+        <a class="btn solid" href="https://www.keenbuildingco.com/warranty" target="_blank" rel="noopener">View KEEN’s full warranty</a>
+        <a class="btn" href="https://www.keenbuildingco.com" target="_blank" rel="noopener">Visit KEEN Building Co</a>
+      </div>
+    </div>
+    <p style="color:var(--mute);font-size:13px;margin-top:26px">Warranty provider, terms and coverage levels provided in full at contract.</p>
   </div>
 </section>
 
@@ -608,7 +644,7 @@ footer p{max-width:1100px;margin-top:10px}
     <h2 class="h2" style="margin-top:20px">Sell the life. <em>Credit the craft.</em></h2>
     <div class="row">
       <div><span class="eyebrow">Architecture</span><b>Brinkley Design</b></div>
-      <div><span class="eyebrow">Builder</span><b>KEEN Building Co</b></div>
+      <div><span class="eyebrow">Builder</span><b><a href="https://www.keenbuildingco.com" target="_blank" rel="noopener" style="text-decoration:none">KEEN Building Co ↗</a></b></div>
       <div><span class="eyebrow">Smart Home</span><b>ALT3 Smart Homes</b></div>
       <div><span class="eyebrow">Presented by</span><b>The Agency Charlotte</b></div>
     </div>
