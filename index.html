@@ -259,6 +259,14 @@ section{position:relative}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:18px 26px;text-decoration:none;font-family:var(--cond);letter-spacing:.22em;text-transform:uppercase;font-size:14px;border:1px solid var(--ink);transition:all .25s}
 .btn.solid{background:var(--red);border-color:var(--red);color:#fff}
 .btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+button.btn{background:none;cursor:pointer;color:var(--ink)}
+.phone-wrap{position:relative;display:inline-block}
+.phone-menu{position:absolute;left:0;right:0;top:calc(100% + 6px);display:flex;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s,transform .25s;z-index:5}
+.phone-wrap.open .phone-menu{opacity:1;pointer-events:auto;transform:none}
+.phone-wrap.open #phoneBtn{background:var(--ink);color:#fff}
+.phone-menu a{flex:1;text-align:center;padding:14px 0;background:var(--ink);color:#fff;text-decoration:none;font-family:var(--cond);letter-spacing:.22em;text-transform:uppercase;font-size:14px}
+.phone-menu a+a{border-left:1px solid rgba(255,255,255,.25)}
+.phone-menu a:hover{background:var(--red)}
 
 footer{background:var(--ink);color:rgba(255,255,255,.55);font-size:12.5px;line-height:1.7;padding:60px 0 40px}
 footer .lockup{color:#fff;margin-bottom:30px}
@@ -619,7 +627,13 @@ footer p{max-width:1100px;margin-top:10px}
       <p style="color:var(--mute)">Founding Partner, Luxury Division · The Agency Charlotte &amp; Lake Norman</p>
       <div class="btns">
         <a class="btn solid" href="mailto:ryan.palmer@theagencyre.com?subject=3321%20Auburn%20Ave%20%E2%80%94%20Private%20Tour">Request a tour</a>
-        <a class="btn" href="tel:+15089542159">(508) 954-2159</a>
+        <div class="phone-wrap">
+          <button class="btn" id="phoneBtn" type="button" aria-expanded="false">(508) 954-2159</button>
+          <div class="phone-menu" id="phoneMenu">
+            <a href="tel:+15089542159">Call</a>
+            <a href="sms:+15089542159?&amp;body=Hi%20Ryan%2C%20I%27m%20interested%20in%203321%20Auburn.">Text</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -628,7 +642,7 @@ footer p{max-width:1100px;margin-top:10px}
 <footer>
   <div class="wrap">
     <a class="lockup" href="#top"><img class="am" src="images/agency-mark.png" alt="The Agency"><span class="x">×</span><img class="kw" src="images/keen-white.png" alt="KEEN Building Co"></a>
-    <p>3321 Auburn Avenue, Charlotte, NC 28209. Renderings, plans, design selections and site plans are conceptual and for illustration only; KEEN Building Company has final say on all finishes. Smart home scope per ALT3 Smart Homes; sample packages and add-ons are optional and not included in the sale unless agreed in writing. Square footage per field measurement; lot size approximate per Mecklenburg County GIS. Information deemed reliable but not guaranteed; buyers should verify all details.</p>
+    <p>3321 Auburn Avenue, Charlotte, NC 28209. Renderings, plans, design selections and site plans are conceptual and for illustration only; KEEN Building Company has final say on all finishes. Smart home scope per ALT3 Smart Homes; prewired upgrades are optional and not included in the sale unless agreed in writing. Square footage per field measurement; lot size approximate per Mecklenburg County GIS. Information deemed reliable but not guaranteed; buyers should verify all details.</p>
     <p>Ryan Palmer, NC Lic. 315654 · The Agency Charlotte, NC Firm Lic. C37988 · 3540 Toringdon Way, Suite 125, Charlotte, NC 28277. An independently owned and operated franchisee of The Agency Real Estate Franchising, LLC. Equal Housing Opportunity.</p>
   </div>
 </footer>
@@ -705,6 +719,11 @@ $$('#planTabs button').forEach(b => b.onclick = () => {
   $('#planImg').src = b.dataset.p;
 });
 $('#planView').onclick = () => openLB(`<img src="${$('#planImg').src}" alt="">`);
+
+// phone: call or text
+const pw = $('.phone-wrap');
+$('#phoneBtn').onclick = e => { e.stopPropagation(); const o = pw.classList.toggle('open'); $('#phoneBtn').setAttribute('aria-expanded', o); };
+document.addEventListener('click', e => { if (!pw.contains(e.target)) { pw.classList.remove('open'); $('#phoneBtn').setAttribute('aria-expanded', false); } });
 
 // Josh.ai demo — only features in the installed ALT3 scope
 const SCENES = {
