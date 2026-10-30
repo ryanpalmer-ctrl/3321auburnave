@@ -164,7 +164,10 @@ section{position:relative}
 .support{margin-top:50px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px)}
 .support .rule{margin:0}
 
-/* prewire house map */
+/* prewire (short) */
+.pw-short{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:end;padding-bottom:clamp(40px,5vw,70px);border-bottom:1px solid rgba(255,255,255,.15)}
+@media(max-width:900px){.pw-short{grid-template-columns:1fr}}
+.prewire .creds{margin-top:40px}
 .prewire{background:#121212;color:#fff}
 .pw-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:start}
 @media(max-width:1000px){.pw-grid{grid-template-columns:1fr}}
@@ -431,45 +434,14 @@ footer p{max-width:1100px;margin-top:10px}
   </div>
 </section>
 
-<section class="prewire pad" id="prewire">
+<section class="prewire" id="prewire" style="padding:clamp(60px,8vw,110px) 0">
   <div class="wrap">
-    <div class="pw-grid">
-      <div class="fade pw-sticky">
+    <div class="pw-short fade">
+      <div>
         <div class="eyebrow" style="color:rgba(255,255,255,.6)">No retrofit needed</div>
-        <h2 class="h2" style="margin-top:20px">Prewired for <em>what’s next.</em></h2>
-        <div class="rule"></div>
-        <p class="lead" style="color:rgba(255,255,255,.75)">Every option plugs into what’s already built here. No opened walls, no visible wires.</p>
+        <h2 class="h2" style="margin-top:16px;font-size:clamp(38px,5vw,72px)">Prewired for <em>what’s next.</em></h2>
       </div>
-      <div class="pw-rooms">
-        <div class="pw fade"><span class="n">01</span><h4>Great Room</h4><p>TV · 5.1 surround · subwoofer</p></div>
-        <div class="pw fade"><span class="n">02</span><h4>Upper Den</h4><p>TV · 5.1 surround · sub · network</p></div>
-        <div class="pw fade"><span class="n">03</span><h4>Primary Bedroom</h4><p>TV · speakers · touchscreen ready</p></div>
-        <div class="pw fade"><span class="n">04</span><h4>Primary Bathroom</h4><p>Ceiling speakers · network</p></div>
-        <div class="pw fade"><span class="n">05</span><h4>Covered Outdoor Living</h4><p>Outdoor TV · outdoor speakers</p></div>
-        <div class="pw fade"><span class="n">06</span><h4>Future Pool</h4><p>Speaker wire, stubbed and waiting</p></div>
-        <div class="pw fade"><span class="n">07</span><h4>Whole Home</h4><p>Additional camera runs</p></div>
-      </div>
-    </div>
-
-    <div class="eyebrow" style="margin-top:clamp(80px,10vw,140px);color:rgba(255,255,255,.6)">Make it yours · Signature packages, built on the wiring already in place</div>
-    <div class="pkgs">
-      <div class="pkg fade"><div class="n">01 · Great Room</div><h4>Great Room Cinema</h4><ul><li>Sony or Samsung Frame TV</li><li>5.1 surround, subwoofer</li><li>“It’s movie time” scene</li></ul></div>
-      <div class="pkg fade"><div class="n">02 · Upper Den</div><h4>Private Media Room</h4><ul><li>Large screen or projector</li><li>Theater sound, subwoofer</li><li>Blackout shades, lighting</li></ul></div>
-      <div class="pkg fade"><div class="n">03 · Porch and Pool</div><h4>Outdoor Living</h4><ul><li>Weather-rated outdoor TV</li><li>Porch, patio and pool audio</li><li>One-touch “Entertain”</li></ul></div>
-    </div>
-    <div class="pkgs" style="margin-top:1px">
-      <div class="pkg fade"><div class="n">Shades · Main Living</div><h4>Living and Dining</h4><ul><li>Motorized roller shades</li><li>Privacy or solar fabrics</li><li>Sunrise and sunset schedule</li></ul></div>
-      <div class="pkg fade"><div class="n">Shades · Primary Suite</div><h4>Rest and Wake</h4><ul><li>Blackout and sheer, layered</li><li>“Goodnight” closes the house</li><li>A slow open at wake-up</li></ul></div>
-      <div class="pkg fade"><div class="n">Shades · Upper Den</div><h4>Media Room Blackout</h4><ul><li>Full blackout shades</li><li>Close with “It’s movie time”</li><li>Pairs with theater lighting</li></ul></div>
-    </div>
-    <div class="eyebrow" style="margin-top:60px;color:rgba(255,255,255,.6)">Now or after move-in · Add-ons for any room</div>
-    <div class="addons fade">
-      <span><b>Shades and Drapery</b> · Lutron and Hunter Douglas</span>
-      <span><b>Security Cameras</b> · on the runs already in place</span>
-      <span><b>More Lighting Control</b> · Lutron throughout</span>
-      <span><b>Designer Lighting</b> · Ketra light that follows the day</span>
-      <span><b>Music in More Rooms</b> · primary suite and bath</span>
-      <span><b>Landscape Lighting</b> · facade and garden, on at sunset</span>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Theater-ready great room and upper den, primary suite, outdoor living, a future pool and extra camera runs. It’s all in the walls already.</p>
     </div>
     <div class="creds fade">
       <div style="display:flex;align-items:center;gap:14px"><img src="images/alt3-white.png" alt="" style="height:30px;width:auto"><span class="alt3mark" style="color:#fff">ALT3 SMART HOMES</span></div>
