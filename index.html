@@ -7,7 +7,7 @@
 <meta name="description" content="3321 Auburn Avenue, Sedgefield, Charlotte. A new KEEN-built home with a Josh.ai smart home by ALT3. Presented by Ryan Palmer, The Agency Charlotte.">
 <meta property="og:title" content="3321 Auburn Avenue · Sedgefield, Charlotte">
 <meta property="og:description" content="A modern, tech-forward KEEN home in Sedgefield. Josh.ai, Lutron, Philips Hue and Wi-Fi 7, built in from day one.">
-<meta property="og:image" content="images/hero.jpg">
+<meta property="og:image" content="https://3321auburnave.com/images/front.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
@@ -335,6 +335,15 @@ footer p{max-width:1100px;margin-top:10px}
 .w-foot .quote{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);max-width:640px;padding-left:22px;border-left:2px solid var(--red)}
 @media(max-width:900px){.w-head,.w-foot{grid-template-columns:1fr}.w-nums{grid-template-columns:1fr}.w-nums>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
+/* gallery */
+.gallery .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;grid-auto-flow:dense;margin-top:clamp(40px,5vw,70px)}
+.gallery figure{margin:0;position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:3/2;background:#eee}
+.gallery figure.w{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figure::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,rgba(0,0,0,.45));pointer-events:none}
+.gallery figcaption{z-index:1;position:absolute;left:12px;bottom:10px;color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+@media(max-width:900px){.gallery .grid{grid-template-columns:1fr 1fr}}
 /* lightbox */
 #lb{position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:90;display:none;align-items:center;justify-content:center;padding:4vw}
 #lb.open{display:flex}
@@ -358,6 +367,7 @@ footer p{max-width:1100px;margin-top:10px}
   </a>
   <div class="links">
     <a href="#home">The Home</a>
+    <a href="#gallery">Gallery</a>
     <a href="#smart">Smart Home</a>
     <a href="#plans">Plans</a>
     <a href="#hood">Sedgefield</a>
@@ -409,6 +419,12 @@ footer p{max-width:1100px;margin-top:10px}
   </div>
 </section>
 
+<section class="gallery pad" id="gallery">
+  <div class="wrap">
+    <div class="fade"><div class="eyebrow red">Gallery</div><h2 class="h2" style="margin-top:20px">Finished, <em>staged</em> and ready.</h2></div>
+    <div class="grid"><figure class="w" data-full="images/gallery/full/g01.jpg"><img src="images/gallery/g01.jpg" alt="Front Exterior" loading="lazy"><figcaption>Front Exterior</figcaption></figure><figure class="" data-full="images/gallery/full/g02.jpg"><img src="images/gallery/g02.jpg" alt="Front Entry" loading="lazy"><figcaption>Front Entry</figcaption></figure><figure class="" data-full="images/gallery/full/g03.jpg"><img src="images/gallery/g03.jpg" alt="Aerial View Toward Uptown" loading="lazy"><figcaption>Aerial View Toward Uptown</figcaption></figure><figure class="" data-full="images/gallery/full/g04.jpg"><img src="images/gallery/g04.jpg" alt="Foyer" loading="lazy"><figcaption>Foyer</figcaption></figure><figure class="" data-full="images/gallery/full/g05.jpg"><img src="images/gallery/g05.jpg" alt="Living Room" loading="lazy"><figcaption>Living Room</figcaption></figure><figure class="" data-full="images/gallery/full/g06.jpg"><img src="images/gallery/g06.jpg" alt="Living Room" loading="lazy"><figcaption>Living Room</figcaption></figure><figure class="w" data-full="images/gallery/full/g07.jpg"><img src="images/gallery/g07.jpg" alt="Kitchen" loading="lazy"><figcaption>Kitchen</figcaption></figure><figure class="" data-full="images/gallery/full/g08.jpg"><img src="images/gallery/g08.jpg" alt="Kitchen" loading="lazy"><figcaption>Kitchen</figcaption></figure><figure class="" data-full="images/gallery/full/g09.jpg"><img src="images/gallery/g09.jpg" alt="Kitchen" loading="lazy"><figcaption>Kitchen</figcaption></figure><figure class="" data-full="images/gallery/full/g10.jpg"><img src="images/gallery/g10.jpg" alt="Dining Room" loading="lazy"><figcaption>Dining Room</figcaption></figure><figure class="" data-full="images/gallery/full/g11.jpg"><img src="images/gallery/g11.jpg" alt="Dining Room" loading="lazy"><figcaption>Dining Room</figcaption></figure><figure class="" data-full="images/gallery/full/g12.jpg"><img src="images/gallery/g12.jpg" alt="Butler&#x27;s Pantry" loading="lazy"><figcaption>Butler&#x27;s Pantry</figcaption></figure><figure class="" data-full="images/gallery/full/g13.jpg"><img src="images/gallery/g13.jpg" alt="Screened Porch" loading="lazy"><figcaption>Screened Porch</figcaption></figure><figure class="" data-full="images/gallery/full/g14.jpg"><img src="images/gallery/g14.jpg" alt="Screened Porch" loading="lazy"><figcaption>Screened Porch</figcaption></figure><figure class="w" data-full="images/gallery/full/g15.jpg"><img src="images/gallery/g15.jpg" alt="Primary Bedroom" loading="lazy"><figcaption>Primary Bedroom</figcaption></figure><figure class="" data-full="images/gallery/full/g16.jpg"><img src="images/gallery/g16.jpg" alt="Primary Bedroom" loading="lazy"><figcaption>Primary Bedroom</figcaption></figure><figure class="" data-full="images/gallery/full/g17.jpg"><img src="images/gallery/g17.jpg" alt="Primary Bathroom" loading="lazy"><figcaption>Primary Bathroom</figcaption></figure><figure class="" data-full="images/gallery/full/g18.jpg"><img src="images/gallery/g18.jpg" alt="Primary Bathroom" loading="lazy"><figcaption>Primary Bathroom</figcaption></figure><figure class="" data-full="images/gallery/full/g19.jpg"><img src="images/gallery/g19.jpg" alt="Walk-In Closet" loading="lazy"><figcaption>Walk-In Closet</figcaption></figure><figure class="" data-full="images/gallery/full/g20.jpg"><img src="images/gallery/g20.jpg" alt="Bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure><figure class="" data-full="images/gallery/full/g21.jpg"><img src="images/gallery/g21.jpg" alt="Bonus Room" loading="lazy"><figcaption>Bonus Room</figcaption></figure><figure class="" data-full="images/gallery/full/g22.jpg"><img src="images/gallery/g22.jpg" alt="Flex Room" loading="lazy"><figcaption>Flex Room</figcaption></figure><figure class="" data-full="images/gallery/full/g23.jpg"><img src="images/gallery/g23.jpg" alt="Backyard" loading="lazy"><figcaption>Backyard</figcaption></figure><figure class="" data-full="images/gallery/full/g24.jpg"><img src="images/gallery/g24.jpg" alt="Backyard" loading="lazy"><figcaption>Backyard</figcaption></figure></div>
+  </div>
+</section>
 <section class="smart pad" id="smart">
   <div class="wrap">
     <div class="top">
@@ -587,7 +603,7 @@ footer p{max-width:1100px;margin-top:10px}
 </section>
 
 <section class="band">
-  <div class="img"><img src="images/hero.jpg" alt="" style="object-position:20% 50%"><div class="tag" style="left:16px;bottom:16px">Rendering · conceptual</div></div>
+  <div class="img"><img src="images/grounds-oak.jpg" alt="3321 Auburn Avenue front lawn and oak" style="object-position:70% 50%"></div>
   <div class="txt fade">
     <div class="eyebrow red">The Grounds</div>
     <h2 class="h2" style="margin-top:20px">A statement <em>oak.</em></h2>
@@ -770,6 +786,7 @@ $$('#planTabs button').forEach(b => b.onclick = () => {
   $$('#planTabs button').forEach(x => x.classList.toggle('on', x === b));
   $('#planImg').src = b.dataset.p;
 });
+$$('#gallery figure').forEach(f => f.onclick = () => openLB(`<img src="${f.dataset.full}" alt="">`));
 $('#planView').onclick = () => openLB(`<img src="${$('#planImg').src}" alt="">`);
 
 // phone: call or text
