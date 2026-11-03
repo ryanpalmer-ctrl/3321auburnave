@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3321 Auburn Avenue</title>
+<meta name="description" content="3321 Auburn Avenue, Sedgefield, Charlotte. A new KEEN-built home with a Josh.ai smart home by ALT3.">
+<meta property="og:title" content="3321 Auburn Avenue · Sedgefield, Charlotte">
+<meta property="og:description" content="A modern, tech-forward KEEN home in Sedgefield. Josh.ai, Lutron, Philips Hue and Wi-Fi 7, built in from day one.">
+<meta property="og:image" content="https://3321auburnave.com/images/front.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#ED2127; --ink:#0B0B0B; --plaster:#F7F6F4; --stone:#E9E6E0; --mute:#6E6A64; --line:rgba(11,11,11,.14);
+  --serif:"Newsreader", ui-serif, "New York", Georgia, serif;
+  --sans:"Barlow", system-ui, sans-serif;
+  --cond:"Barlow Condensed", "Barlow", sans-serif;
+  --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--plaster);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.eyebrow{font-family:var(--cond);font-weight:500;letter-spacing:.32em;text-transform:uppercase;font-size:13px}
+.eyebrow.red{color:var(--red)}
+.serif{font-family:var(--serif);font-weight:300}
+.wrap{padding:0 var(--gut);max-width:1500px;margin:0 auto}
+.rule{width:56px;height:2px;background:var(--red);margin:22px 0}
+.tag{position:absolute;font-family:var(--cond);letter-spacing:.24em;text-transform:uppercase;font-size:11px;background:rgba(11,11,11,.55);color:#fff;padding:6px 10px;backdrop-filter:blur(6px)}
+
+/* loader */
+#loader{position:fixed;inset:0;background:var(--red);z-index:100;display:flex;align-items:center;justify-content:center;transition:transform 1.1s cubic-bezier(.77,0,.18,1)}
+#loader.gone{transform:translateY(-100%)}
+#loader span{font-family:var(--serif);font-weight:300;color:#fff;font-size:clamp(80px,18vw,240px);letter-spacing:-.02em;line-height:1}
+#loader small{position:absolute;bottom:40px;color:#fff;opacity:.8}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px var(--gut);transition:background .4s,padding .4s,color .4s;color:#fff}
+nav.solid{background:rgba(247,246,244,.92);backdrop-filter:blur(14px);color:var(--ink);padding:12px var(--gut);border-bottom:1px solid var(--line)}
+.lockup{display:flex;align-items:center;gap:14px;text-decoration:none}
+.lockup .am{width:40px;height:40px}
+.lockup .x{font-family:var(--cond);opacity:.7}
+.lockup .kw{height:20px}
+nav .kw.dark{display:none} nav.solid .kw.white{display:none} nav.solid .kw.dark{display:block}
+nav .links{display:flex;gap:clamp(14px,1.6vw,28px);align-items:center}
+nav .links a{text-decoration:none;font-family:var(--cond);letter-spacing:.16em;text-transform:uppercase;font-size:13px;opacity:.9;white-space:nowrap}
+@media(max-width:1280px){nav .links a[href="#photos"],nav .links a[href="#plans"]{display:none}}
+nav .cta{border:1px solid currentColor;padding:9px 16px}
+nav.solid .cta{background:var(--red);border-color:var(--red);color:#fff}
+@media(max-width:900px){nav .links a:not(.cta){display:none}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:#111;color:#fff}
+.hero .media{position:absolute;inset:0}
+.hero .media img,.hero .media video{width:100%;height:100%;object-fit:cover;transform:scale(1.12);animation:kb 22s ease-out forwards}
+@keyframes kb{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.78) 100%)}
+.hero .copy{position:absolute;left:var(--gut);right:var(--gut);bottom:clamp(36px,8vh,90px);z-index:2}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(64px,13vw,210px);line-height:1;letter-spacing:-.03em;margin-top:14px}
+.hero h1 .reveal-line{padding:.06em 0 .1em;margin:-.06em 0 -.1em}
+@media(max-width:600px){.hero .copy>.eyebrow{font-size:11px;letter-spacing:.24em;line-height:1.7}.hero h1{font-size:22vw}}
+.hero h1 em{font-style:italic}
+.hero .sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:22px}
+.hero .sub p{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,30px);font-weight:300;max-width:620px}
+.hero .tag{top:auto;bottom:18px;right:var(--gut);z-index:3}
+.hero .scroll{position:absolute;left:50%;bottom:22px;z-index:3;width:1px;height:46px;background:rgba(255,255,255,.35);overflow:hidden}
+.hero .scroll::after{content:"";position:absolute;left:0;top:-46px;width:1px;height:46px;background:#fff;animation:drip 2.2s infinite}
+@keyframes drip{to{top:46px}}
+.reveal-line{display:block;overflow:hidden}
+.reveal-line>span{display:block;transform:translateY(105%);transition:transform 1.3s cubic-bezier(.19,1,.22,1)}
+.ready .reveal-line>span{transform:none}
+.ready .reveal-line:nth-child(2)>span{transition-delay:.12s}
+
+/* stats */
+.stats{background:var(--ink);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(6,1fr);border-left:1px solid rgba(255,255,255,.12)}
+.stat{padding:34px 22px;border-right:1px solid rgba(255,255,255,.12)}
+.stat b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(36px,4vw,60px);line-height:1}
+.stat span{display:block;margin-top:10px;opacity:.65}
+@media(max-width:900px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid rgba(255,255,255,.12)}}
+
+/* sections */
+section{position:relative}
+.pad{padding:clamp(80px,12vw,170px) 0}
+.h2{font-family:var(--serif);font-weight:300;font-size:clamp(44px,6.4vw,104px);line-height:.95;letter-spacing:-.02em}
+.h2 em{font-style:italic}
+.lead{font-family:var(--serif);font-weight:300;font-size:clamp(21px,2vw,28px);line-height:1.45}
+.fade{opacity:0;transform:translateY(34px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.19,1,.22,1)}
+.fade.in{opacity:1;transform:none}
+
+/* story */
+.story .grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(30px,6vw,110px);align-items:end}
+.story .words{display:flex;gap:.3em;flex-wrap:wrap}
+.story .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(60px,8vw,120px);border-top:1px solid var(--line)}
+.pillar{padding:30px 30px 0 0}
+.pillar+.pillar{padding-left:30px;border-left:1px solid var(--line)}
+.pillar .n{font-family:var(--serif);font-size:15px;color:var(--red)}
+.pillar h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:8px 0 10px}
+@media(max-width:900px){.story .grid,.story .pillars{grid-template-columns:1fr}.pillar+.pillar{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* film */
+.film{background:var(--ink);color:#fff}
+.film .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px 40px;margin-bottom:clamp(28px,4vw,56px)}
+.film .h2{font-size:clamp(40px,6vw,92px);margin-top:14px}
+.film .head p{max-width:440px;color:rgba(255,255,255,.68)}
+.vid{position:relative;overflow:hidden;background:#000;cursor:pointer}
+.vid video{display:block;width:100%;height:100%;object-fit:cover}
+.vid.wide{aspect-ratio:2/1}
+.vid.tall{aspect-ratio:9/16}
+.vid .ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.4));transition:opacity .5s}
+.vid .ov .eyebrow{color:#fff}
+.vid.playing .ov{opacity:0;pointer-events:none}
+.vid.playing{cursor:auto}
+.play{width:clamp(68px,9vw,120px);height:clamp(68px,9vw,120px);border-radius:50%;border:1px solid rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;position:relative;transition:transform .4s,background .4s}
+.vid:hover .play{transform:scale(1.06);background:rgba(255,255,255,.08)}
+.play::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(255,255,255,.25);animation:pulse 2.6s infinite}
+@keyframes pulse{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.play i{width:0;height:0;border-left:clamp(15px,1.8vw,22px) solid #fff;border-top:clamp(10px,1.15vw,14px) solid transparent;border-bottom:clamp(10px,1.15vw,14px) solid transparent;margin-left:6px}
+.reel-row{display:grid;grid-template-columns:minmax(0,min(380px,42svh)) 1fr;gap:clamp(28px,6vw,110px);align-items:center;margin-top:clamp(40px,6vw,90px)}
+.reel-row .h3{font-family:var(--serif);font-weight:300;font-size:clamp(32px,4vw,60px);line-height:1;margin:12px 0 18px}
+.reel-row p{color:rgba(255,255,255,.68);max-width:460px}
+@media(max-width:760px){.reel-row{grid-template-columns:1fr}.reel-row .vid{width:min(100%,400px,48svh);margin:0 auto}.reel-row .txt{order:-1}}
+
+/* features */
+.features{background:#fff}
+.feat-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(50px,7vw,100px)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:clamp(30px,4vw,70px);row-gap:70px}
+.feat h3{font-family:var(--serif);font-weight:400;font-size:30px;display:flex;align-items:baseline;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--ink);margin-bottom:6px}
+.feat h3 small{font-family:var(--cond);font-size:13px;color:var(--red);letter-spacing:.2em}
+.feat li{list-style:none;padding:13px 0;border-bottom:1px solid var(--line);font-size:16.5px}
+@media(max-width:1000px){.feat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.feat-grid{grid-template-columns:1fr}}
+
+/* split image band */
+.band{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.band .img{position:relative;overflow:hidden}
+.band .img img{width:100%;height:100%;object-fit:cover}
+.band .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,7vw,120px)}
+@media(max-width:900px){.band{grid-template-columns:1fr}.band .img{height:60vh}}
+
+/* ALT3 smart home */
+.smart{background:var(--ink);color:#fff;overflow:hidden}
+.smart .eyebrow{color:rgba(255,255,255,.6)}
+.smart .top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,110px);align-items:center}
+@media(max-width:1000px){.smart .top{grid-template-columns:1fr}}
+.console{background:linear-gradient(160deg,#1a1a1a,#0f0f0f);border:1px solid rgba(255,255,255,.1);padding:28px;position:relative}
+.console .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.console .bar .eyebrow{font-size:11px}
+.wave{display:flex;gap:4px;align-items:center;height:28px}
+.wave i{width:3px;background:var(--red);height:6px;border-radius:2px;transition:height .2s}
+.console.talking .wave i{animation:wv .9s infinite ease-in-out}
+.wave i:nth-child(2){animation-delay:.1s!important}.wave i:nth-child(3){animation-delay:.2s!important}.wave i:nth-child(4){animation-delay:.3s!important}.wave i:nth-child(5){animation-delay:.4s!important}.wave i:nth-child(6){animation-delay:.5s!important}
+@keyframes wv{0%,100%{height:6px}50%{height:26px}}
+.said{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);min-height:2.6em;line-height:1.3}
+.reply{font-size:15px;color:rgba(255,255,255,.65);min-height:3em;margin-top:8px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.room{border:1px solid rgba(255,255,255,.1);padding:14px;position:relative;overflow:hidden;transition:background .8s,border-color .8s}
+.room .glow{position:absolute;inset:0;opacity:0;transition:opacity 1s,background 1s}
+.room b{position:relative;font-family:var(--cond);font-weight:500;letter-spacing:.18em;text-transform:uppercase;font-size:12px;display:block}
+.room span{position:relative;font-size:13px;color:rgba(255,255,255,.6);display:block;margin-top:4px;min-height:1.5em}
+.room .lv{position:relative;height:2px;background:rgba(255,255,255,.12);margin-top:10px}
+.room .lv i{display:block;height:100%;width:0;background:#fff;transition:width 1.2s,background 1s}
+.cmds{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cmds button{font-family:var(--serif);font-style:italic;font-size:17px;background:none;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;cursor:pointer;transition:all .25s}
+.cmds button:hover,.cmds button.on{background:#fff;color:var(--ink)}
+.smart-list{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(70px,9vw,130px);border-top:1px solid rgba(255,255,255,.15)}
+.si{padding:34px 28px 34px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+.si:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid rgba(255,255,255,.15)}
+.si .n{font-family:var(--serif);color:var(--red);font-size:15px}
+.si h4{font-family:var(--serif);font-weight:400;font-size:28px;margin:6px 0 8px}
+.si p{color:rgba(255,255,255,.62);font-size:15.5px}
+@media(max-width:900px){.smart-list{grid-template-columns:1fr}.si:not(:nth-child(3n+1)){padding-left:0;border-left:0}}
+.support{margin-top:50px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px)}
+.support .rule{margin:0}
+
+/* prewire (short) */
+.pw-short{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:end;padding-bottom:clamp(40px,5vw,70px);border-bottom:1px solid rgba(255,255,255,.15)}
+@media(max-width:900px){.pw-short{grid-template-columns:1fr}}
+.prewire .creds{margin-top:40px}
+.prewire{background:#121212;color:#fff}
+.pw-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:start}
+@media(max-width:1000px){.pw-grid{grid-template-columns:1fr}}
+@media(min-width:1001px){.pw-sticky{position:sticky;top:120px}}
+.pw-rooms{border-top:1px solid rgba(255,255,255,.15)}
+.pw{display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.15);cursor:default;transition:padding .3s}
+.pw:hover{padding-left:10px}
+.pw .n{font-family:var(--serif);color:var(--red)}
+.pw h4{font-family:var(--serif);font-weight:400;font-size:26px}
+.pw p{color:rgba(255,255,255,.6);font-size:15px;text-align:right}
+@media(max-width:640px){.pw{grid-template-columns:40px 1fr}.pw p{grid-column:2;text-align:left}}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);margin-top:clamp(70px,8vw,120px)}
+.pkg{background:#121212;padding:34px 30px}
+.pkg .n{font-family:var(--cond);letter-spacing:.24em;font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase}
+.pkg h4{font-family:var(--serif);font-weight:400;font-size:30px;margin:12px 0 16px}
+.pkg li{list-style:none;color:rgba(255,255,255,.7);padding:6px 0;font-size:15.5px}
+.pkg li::before{content:"— ";color:var(--red)}
+@media(max-width:900px){.pkgs{grid-template-columns:1fr}}
+.addons{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.addons span{border:1px solid rgba(255,255,255,.25);padding:10px 16px;font-size:14.5px;color:rgba(255,255,255,.85)}
+.addons span b{font-weight:500;color:#fff}
+.creds{margin-top:50px;color:rgba(255,255,255,.55);font-size:14px;letter-spacing:.04em}
+.alt3mark{font-family:var(--cond);font-weight:600;letter-spacing:.3em;font-size:22px}
+
+/* design intent rail */
+.design .head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.rail{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;padding:60px var(--gut) 30px;cursor:grab;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.board{flex:0 0 min(78vw,920px);scroll-snap-align:center;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.25)}
+.board figure{position:relative}
+.board img{width:100%;aspect-ratio:16/7.6;object-fit:contain;background:#fff;pointer-events:none;user-select:none}
+.board figcaption{display:flex;justify-content:space-between;align-items:baseline;padding:20px 26px;border-top:1px solid var(--line)}
+.board figcaption b{font-family:var(--serif);font-weight:400;font-size:26px}
+.rail-ctl{display:flex;gap:12px}
+.rail-ctl button{width:54px;height:54px;border:1px solid var(--ink);background:none;font-size:20px;cursor:pointer;transition:all .2s}
+.rail-ctl button:hover{background:var(--ink);color:#fff}
+
+/* grounds */
+.grounds{background:var(--stone)}
+.g-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,6vw,110px);align-items:center}
+@media(max-width:1000px){.g-grid{grid-template-columns:1fr}}
+.toggle{display:inline-flex;border:1px solid var(--ink);margin-top:30px}
+.toggle button{background:none;border:0;padding:12px 20px;font-family:var(--cond);letter-spacing:.2em;text-transform:uppercase;font-size:13px;cursor:pointer}
+.toggle button.on{background:var(--ink);color:#fff}
+.siteplan{position:relative;background:#fff;padding:20px}
+.siteplan img{width:100%;max-height:82vh;object-fit:contain;transition:opacity .6s}
+.siteplan img.alt{position:absolute;inset:20px;width:calc(100% - 40px);height:calc(100% - 40px);opacity:0}
+.siteplan.pool img.alt{opacity:1}.siteplan.pool img.base{opacity:0}
+.palette{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:clamp(60px,8vw,110px)}
+.palette div{aspect-ratio:3/4;overflow:hidden}
+.palette img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.palette div:hover img{transform:scale(1.08)}
+@media(max-width:700px){.palette{grid-template-columns:repeat(4,1fr)}.palette div:nth-child(n+5){display:none}}
+
+/* plans */
+.plans .tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin:40px 0 0}
+.plans .tabs button{background:none;border:0;padding:18px 26px 16px 0;margin-right:26px;font-family:var(--serif);font-size:24px;cursor:pointer;color:var(--mute);border-bottom:2px solid transparent;margin-bottom:-1px}
+.plans .tabs button small{font-family:var(--cond);font-size:13px;letter-spacing:.18em;margin-left:10px}
+.plans .tabs button.on{color:var(--ink);border-color:var(--red)}
+.plan-view{background:#fff;margin-top:40px;padding:clamp(20px,4vw,60px);display:flex;justify-content:center;cursor:zoom-in}
+.plan-view img{max-height:86vh;width:auto}
+
+/* neighborhood */
+.hood .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,110px)}
+@media(max-width:1000px){.hood .grid{grid-template-columns:1fr}}
+.places li{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:22px}
+.places li span{font-family:var(--sans);font-size:14px;color:var(--mute);text-align:right}
+.mapcard{position:relative;display:block;min-height:440px;overflow:hidden;background:#ddd;text-decoration:none}
+.mapcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:transform 1.4s}
+.mapcard:hover img{transform:scale(1.05)}
+.mapcard .pin{position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 10px rgba(237,33,39,.25),0 0 0 22px rgba(237,33,39,.12);transform:translate(-50%,-50%)}
+.mapcard .go{position:absolute;left:20px;bottom:20px;background:var(--ink);color:#fff;padding:12px 16px}
+
+/* credits */
+.credits{background:var(--red);color:#fff;text-align:center}
+.credits .row{display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px;border-top:1px solid rgba(255,255,255,.35)}
+.credits .row div{padding:34px 20px;border-right:1px solid rgba(255,255,255,.35)}
+.credits .row div:last-child{border-right:0}
+.credits .row b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;margin-top:8px}
+@media(max-width:1000px){.credits .row{grid-template-columns:1fr 1fr}}@media(max-width:600px){.credits .row{grid-template-columns:1fr}.credits .row div{border-right:0;border-bottom:1px solid rgba(255,255,255,.35)}}
+
+/* contact */
+.contact .grid{display:grid;grid-template-columns:4fr 6fr;gap:clamp(40px,6vw,110px);align-items:center}
+@media(max-width:900px){.contact .grid{grid-template-columns:1fr}}
+.contact .portrait{background:var(--stone);aspect-ratio:4/5;overflow:hidden}
+.contact .portrait img{width:100%;height:100%;object-fit:cover;object-position:top}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 26px;text-decoration:none;font-family:var(--cond);letter-spacing:.22em;text-transform:uppercase;font-size:14px;border:1px solid var(--ink);transition:all .25s}
+.btn.solid{background:var(--red);border-color:var(--red);color:#fff}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+button.btn{background:none;cursor:pointer;color:var(--ink)}
+.phone-wrap{position:relative;display:inline-block}
+.phone-menu{position:absolute;left:0;right:0;top:calc(100% + 6px);display:flex;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s,transform .25s;z-index:5}
+.phone-wrap.open .phone-menu{opacity:1;pointer-events:auto;transform:none}
+.phone-wrap.open #phoneBtn{background:var(--ink);color:#fff}
+.phone-menu a{flex:1;text-align:center;padding:14px 0;background:var(--ink);color:#fff;text-decoration:none;font-family:var(--cond);letter-spacing:.22em;text-transform:uppercase;font-size:14px}
+.phone-menu a+a{border-left:1px solid rgba(255,255,255,.25)}
+.phone-menu a:hover{background:var(--red)}
+
+footer{background:var(--ink);color:rgba(255,255,255,.55);font-size:12.5px;line-height:1.7;padding:60px 0 40px}
+footer .lockup{color:#fff;margin-bottom:30px}
+footer p{max-width:1100px;margin-top:10px}
+
+
+/* josh band + product stack */
+.joshband{position:relative;margin-top:clamp(80px,10vw,140px);display:grid;grid-template-columns:7fr 5fr;background:#161616}
+.joshband img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.joshband figcaption{padding:clamp(30px,5vw,70px);display:flex;flex-direction:column;justify-content:center}
+.joshband b{font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.6vw,56px);line-height:1;margin:14px 0 18px}
+.joshband p{color:rgba(255,255,255,.65)}
+@media(max-width:900px){.joshband{grid-template-columns:1fr}}
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:28px}
+@media(max-width:1000px){.stack{grid-template-columns:1fr 1fr}}@media(max-width:620px){.stack{grid-template-columns:1fr}}
+.prod .art{aspect-ratio:4/3;background:radial-gradient(120% 90% at 50% 0%,#232323,#0e0e0e);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.prod .meta{padding:22px 0 0;border-top:1px solid rgba(255,255,255,.15);margin-top:0}
+.prod .n{font-family:var(--serif);color:var(--red);font-size:15px}
+.prod h4{font-family:var(--serif);font-weight:400;font-size:28px;margin:4px 0 6px}
+.prod p{color:rgba(255,255,255,.62);font-size:15.5px}
+.a-josh .ring{width:46%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 0deg,#ED2127,#ff8a3d,#ffd36b,#7ad1ff,#9b7bff,#ED2127);animation:spin 6s linear infinite;filter:blur(1px);mask:radial-gradient(circle,transparent 62%,#000 64%);-webkit-mask:radial-gradient(circle,transparent 62%,#000 64%)}
+.a-josh .mic{position:absolute;width:10%;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 0 40px rgba(255,255,255,.6)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.a-lutron .keypad{width:24%;aspect-ratio:1/1.7;background:linear-gradient(180deg,#f4f3f0,#e3e1dc);border-radius:6px;padding:12% 14%;display:flex;flex-direction:column;gap:9%;box-shadow:0 30px 50px -20px rgba(0,0,0,.8),inset 0 1px 0 #fff;position:relative}
+.a-lutron .keypad i{flex:1;border-radius:3px;background:#fbfaf8;border:1px solid rgba(0,0,0,.10);box-shadow:0 2px 3px rgba(0,0,0,.12);position:relative}
+.a-lutron .keypad i::after{content:"";position:absolute;left:-14%;top:50%;width:4px;height:4px;border-radius:50%;background:#cfcac2;transform:translateY(-50%)}
+.a-lutron .keypad i.on::after{background:#fff6d8;box-shadow:0 0 8px #ffd36b}
+.a-lutron .keypad em{position:absolute;inset:-60%;background:radial-gradient(circle,rgba(255,214,140,.18),transparent 55%);pointer-events:none;animation:breath 4s ease-in-out infinite}
+@keyframes breath{50%{opacity:.35}}
+.a-hue .orb{width:46%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ffb35c 30%,#ED2127 60%,transparent 72%);filter:blur(6px);animation:hue 9s linear infinite}
+@keyframes hue{to{filter:blur(6px) hue-rotate(360deg)}}
+.a-audio .grille{width:40%;aspect-ratio:1;border-radius:50%;background:#e9e7e3 radial-gradient(circle,#b9b5ae 1.2px,transparent 1.6px) 0 0/8px 8px;box-shadow:0 0 0 6px #f4f3f0,0 30px 50px -20px rgba(0,0,0,.8)}
+.a-audio .wv{position:absolute;width:40%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.35);animation:ripple 3s ease-out infinite}
+.a-audio .w2{animation-delay:1.5s}
+@keyframes ripple{from{transform:scale(1.05);opacity:1}to{transform:scale(2.2);opacity:0}}
+.a-door .bell{width:16%;aspect-ratio:1/2.6;background:#111;border:1px solid #333;border-radius:40px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:14% 0;box-shadow:0 30px 50px -20px rgba(0,0,0,.9)}
+.a-door .bell b{width:42%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#4a6aa8,#0a0f1a 60%);box-shadow:0 0 0 3px #222}
+.a-door .bell s{width:50%;aspect-ratio:1;border-radius:50%;border:2px solid #9fd0ff;box-shadow:0 0 14px #9fd0ff;animation:breath 2.4s ease-in-out infinite}
+.a-wifi .arc{position:absolute;border-radius:50%;border:3px solid transparent;border-top-color:#fff;aspect-ratio:1;top:30%;animation:wifi 2.4s ease-in-out infinite}
+.a-wifi .r1{width:22%;animation-delay:.0s}.a-wifi .r2{width:38%;top:22%;animation-delay:.25s}.a-wifi .r3{width:54%;top:14%;animation-delay:.5s}
+.a-wifi .arc{left:50%;transform:translateX(-50%)}
+.a-wifi .dot{position:absolute;top:58%;width:12px;height:12px;border-radius:50%;background:var(--red)}
+@keyframes wifi{0%,100%{opacity:.25}50%{opacity:1}}
+
+
+/* warranty */
+.warranty{background:#fff}
+.w-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,110px);align-items:end}
+.w-nums{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(50px,7vw,100px);border-top:1px solid var(--ink)}
+.w-nums>div{padding:34px 30px 30px 0}
+.w-nums>div+div{padding-left:30px;border-left:1px solid var(--line)}
+.w-nums b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(80px,10vw,150px);line-height:.9;color:var(--red)}
+.w-nums .eyebrow{display:block;margin:14px 0 8px;color:var(--mute)}
+.w-foot{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;margin-top:clamp(40px,5vw,70px);padding-top:34px;border-top:1px solid var(--line)}
+.w-foot .quote{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);max-width:640px;padding-left:22px;border-left:2px solid var(--red)}
+@media(max-width:900px){.w-head,.w-foot{grid-template-columns:1fr}.w-nums{grid-template-columns:1fr}.w-nums>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* gallery */
+.gallery .ghead{max-width:760px;margin-bottom:clamp(50px,7vw,100px)}
+.gallery .ghead .lead{margin-top:22px;color:var(--mute)}
+.gallery .row{display:grid;gap:clamp(10px,1.4vw,22px);margin-bottom:clamp(10px,1.4vw,22px)}
+.gallery .row.full{grid-template-columns:1fr}.gallery .row.full figure{aspect-ratio:16/10}
+.gallery .row.pair{grid-template-columns:1fr 1fr;padding:0 clamp(0px,8vw,140px)}.gallery .row.pair figure{aspect-ratio:2/3}
+.gallery .row.trio{grid-template-columns:repeat(3,1fr)}.gallery .row.trio figure{aspect-ratio:2/3}
+.gallery .row.split{grid-template-columns:2fr 1fr}.gallery .row.split figure:first-child{aspect-ratio:auto}.gallery .row.split figure:nth-child(2){aspect-ratio:2/3}
+.gallery figure{margin:0;overflow:hidden;cursor:zoom-in;background:var(--stone)}
+.gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.gallery figure:hover img{transform:scale(1.025)}
+.gallery .gcap{grid-column:1/-1;display:flex;gap:28px;align-items:baseline;padding:14px 0 clamp(40px,6vw,90px);border-top:0}
+.gallery .gcap .eyebrow{color:var(--ink)}
+.gallery .gcap em{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(17px,1.5vw,21px);color:var(--mute)}
+@media(max-width:900px){.gallery .row.pair{padding:0}.gallery .row.trio{grid-template-columns:1fr 1fr}.gallery .row.trio figure:last-child{display:none}.gallery .row.split{grid-template-columns:1fr}.gallery .row.split figure:first-child{aspect-ratio:3/2}.gallery .row.split figure:nth-child(2){display:none}.gallery .gcap{flex-direction:column;gap:6px}}
+/* lightbox */
+/* every photo — one strip, room chips */
+.photos .phead{max-width:760px;margin-bottom:clamp(28px,4vw,48px)}
+.photos .phead .lead{margin-top:18px;color:var(--mute)}
+.ptabs{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.pchips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.pchips::-webkit-scrollbar{display:none}
+.pchips button{flex:0 0 auto;font-family:var(--cond);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:12px;padding:10px 16px;border:1px solid var(--line);border-radius:40px;background:none;color:var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.pchips button i{font-style:normal;opacity:.5;margin-left:4px}
+.pchips button.on,.pchips button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ptabs .parr{display:flex;gap:8px;flex:0 0 auto}
+.ptabs .parr button{width:42px;height:42px;border:1px solid var(--line);background:none;border-radius:50%;cursor:pointer;font-size:17px;color:var(--ink);transition:background .3s,color .3s}
+.ptabs .parr button:hover{background:var(--ink);color:#fff}
+.pchap{display:none}.pchap.on{display:block;animation:pin .5s ease}
+@keyframes pin{from{opacity:0}to{opacity:1}}
+.pstrip{display:flex;gap:clamp(10px,1.2vw,16px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--gut);padding:0 var(--gut) 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.pstrip::-webkit-scrollbar{display:none}
+.pstrip figure{flex:0 0 auto;height:clamp(240px,42vh,440px);margin:0;scroll-snap-align:start;cursor:zoom-in;display:flex;flex-direction:column;max-width:calc(100vw - 2*var(--gut))}
+.pstrip figure img{flex:1;min-height:0;width:100%;object-fit:cover;background:var(--stone);transition:opacity .4s}
+.pstrip figure:hover img{opacity:.9}
+.pstrip figcaption{flex:0 0 auto;padding-top:10px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:15px;line-height:1.35;color:var(--mute)}
+@media(max-width:600px){.ptabs .parr{display:none}.pstrip figure{height:auto;width:78vw;aspect-ratio:auto!important}.pstrip figure img{flex:none;height:62vw;width:100%}}
+#lb .lbfig{margin:0;display:flex;flex-direction:column;align-items:center;max-width:100%;max-height:100%}
+#lb .lbfig img{max-height:calc(100vh - 8vw - 70px)}
+#lb .lbfig figcaption{color:#fff;font-family:var(--serif);font-style:italic;font-weight:300;font-size:18px;padding-top:16px;text-align:center}
+#lb .lbfig figcaption b{font-family:var(--cond);font-style:normal;font-weight:500;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:rgba(255,255,255,.6);margin-right:14px}
+#lb .nv{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:40px;cursor:pointer;padding:20px;font-family:var(--serif);z-index:2}
+#lb .nv.p{left:6px}#lb .nv.n{right:6px}
+@media(max-width:600px){#lb .nv{display:none}}
+/* 3d tour */
+.tour{background:var(--ink);color:#fff}
+.tour .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px 40px;margin-bottom:clamp(28px,4vw,48px)}
+.tour .head p{max-width:440px;color:rgba(255,255,255,.68)}
+.tour .frame{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;cursor:pointer}
+.tour .frame img{width:100%;height:100%;object-fit:cover;opacity:.75;transition:opacity .5s,transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.tour .frame:hover img{opacity:.9;transform:scale(1.02)}
+.tour .frame .go{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.tour .frame .go b{width:84px;height:84px;border:1px solid rgba(255,255,255,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:500;letter-spacing:.14em;font-size:18px}
+.tour .frame .go .eyebrow{color:#fff}
+.tour .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tour .alt{margin-top:16px;font-size:14px;color:rgba(255,255,255,.6)}
+.tour .alt a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+@media(max-width:600px){.tour .frame{aspect-ratio:4/5}}
+/* property details */
+.details{background:#fff}
+.details .dhead{margin-bottom:clamp(40px,5vw,70px)}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:clamp(30px,4vw,70px);row-gap:56px}
+.dgrp h3,.drooms h3{font-family:var(--serif);font-weight:400;font-size:26px;padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:4px}
+.dgrp dl{display:grid;grid-template-columns:minmax(110px,38%) 1fr;margin:0}
+.dgrp dt,.dgrp dd{padding:12px 0;border-bottom:1px solid var(--line);margin:0;font-size:15.5px}
+.dgrp dt{font-family:var(--cond);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--mute);padding-top:14px;padding-right:12px}
+.drooms{margin-top:64px;max-width:760px}
+.drooms table{width:100%;border-collapse:collapse;font-size:15.5px}
+.drooms th{text-align:left;font-family:var(--cond);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--mute);padding:12px 0;border-bottom:1px solid var(--line)}
+.drooms td{padding:12px 0;border-bottom:1px solid var(--line)}
+.dnote{margin-top:36px;font-size:13px;color:var(--mute);max-width:760px}
+@media(max-width:1000px){.dgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.dgrid{grid-template-columns:1fr}}
+#lb{position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:90;display:none;align-items:center;justify-content:center;padding:4vw}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:100%;background:#fff}
+#lb iframe,#lb video{width:min(1400px,92vw);aspect-ratio:16/9;border:0;background:#000}
+
+#lb .x{position:absolute;top:18px;right:24px;color:#fff;font-size:34px;background:none;border:0;cursor:pointer;font-family:var(--serif)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div id="loader"><span>3321</span><small class="eyebrow">Auburn Avenue · Sedgefield</small></div>
+
+<nav id="nav">
+  <a class="lockup" href="#top" aria-label="3321 Auburn Avenue" style="font-family:var(--cond);font-weight:600;letter-spacing:.2em;text-transform:uppercase">3321 Auburn</a>
+  <div class="links">
+    <a href="#home">The Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#photos">All Photos</a>
+    <a href="#tour">3D Tour</a>
+    <a href="#details">Details</a>
+    <a href="#smart">Smart Home</a>
+    <a href="#plans">Plans</a>
+    <a href="#hood">Sedgefield</a>
+    <a class="cta" href="#contact">Tour Info</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="media" id="heroMedia"><video id="heroVid" autoplay muted loop playsinline preload="auto" poster="../images/hero-loop.jpg" aria-label="3321 Auburn Avenue exterior"></video></div>
+  <div class="copy">
+    <div class="eyebrow" style="opacity:.85">Modern · Intelligent · Sedgefield, Charlotte</div>
+    <h1><span class="reveal-line"><span>3321</span></span><span class="reveal-line"><span><em>Auburn</em></span></span></h1>
+    <div class="sub">
+      <p>A modern, tech-forward home. Architecture by Brinkley Design, built by KEEN, smart from day one.</p>
+      <div class="eyebrow">Offered at $2,750,000</div>
+    </div>
+  </div>
+  <div class="tag">From the film</div>
+  <div class="scroll"></div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>$2.75M</b><span class="eyebrow">Offered at</span></div>
+    <div class="stat"><b data-count="5">5</b><span class="eyebrow">Bedrooms</span></div>
+    <div class="stat"><b>5<small style="font-size:.5em">+2</small></b><span class="eyebrow">Full + half baths</span></div>
+    <div class="stat"><b data-count="4523" data-comma="1">4,523</b><span class="eyebrow">Heated sq ft</span></div>
+    <div class="stat"><b>24/7</b><span class="eyebrow">ALT3 support, year one</span></div>
+    
+    <div class="stat"><b data-count="2026">2026</b><span class="eyebrow">Built by KEEN</span></div>
+  </div>
+</div>
+
+<section class="story pad" id="home">
+  <div class="wrap">
+    <div class="grid">
+      <div class="fade">
+        <div class="eyebrow red">The Home</div>
+        <h2 class="h2" style="margin-top:20px">Modern by design. <em>Intelligent</em> by default.</h2>
+      </div>
+      <div class="fade">
+        <p class="lead">A standing seam roof, steel doors and windows, full masonry brick and clean modern lines, with a home that listens. Ask Josh to set the lights, start the music or show who’s at the door. Lutron scenes, Philips Hue color and a Wi-Fi 7 network are installed, and the wiring for theater, outdoor audio and cameras is already in the walls. Walkable to South End.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar fade"><div class="n">01</div><h3>Modern</h3><p>Architecture by Brinkley Design, built by KEEN. Steel windows, white oak, walnut and limestone, with clean lines and real craft.</p></div>
+      <div class="pillar fade"><div class="n">02</div><h3>Connected</h3><p>Voice and touch control, smart lighting, kitchen audio and Wi-Fi 7 by ALT3, live on move-in day.</p></div>
+      <div class="pillar fade"><div class="n">03</div><h3>Walkable</h3><p>Tech-forward living on Sedgefield’s tree-lined streets, minutes on foot to South End.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery pad" id="gallery">
+  <div class="wrap">
+    <div class="ghead fade"><div class="eyebrow red">Gallery</div><h2 class="h2" style="margin-top:20px">Finished, <em>furnished</em> and ready.</h2><p class="lead">Tap any image to view it full screen.</p></div>
+    <div class="row full fade"><figure data-full="../images/gallery/full/g01.jpg"><img src="../images/gallery/full/g01.jpg" alt="The Facade" loading="lazy"></figure><div class="gcap"><span class="eyebrow">The Facade</span><em>Full masonry brick, steel windows, clean modern lines.</em></div></div><div class="row pair fade"><figure data-full="../images/gallery/art/a123.jpg"><img src="../images/gallery/art/a123.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a054.jpg"><img src="../images/gallery/art/a054.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure></div><div class="row split fade"><figure data-full="../images/gallery/full/g04.jpg"><img src="../images/gallery/full/g04.jpg" alt="Arrival" loading="lazy"></figure><figure data-full="../images/gallery/art/a052.jpg"><img src="../images/gallery/art/a052.jpg" alt="Arrival" loading="lazy"></figure><div class="gcap"><span class="eyebrow">Arrival</span><em>Steel and glass at the door, white oak underfoot.</em></div></div><div class="row full fade"><figure data-full="../images/gallery/full/g05.jpg"><img src="../images/gallery/full/g05.jpg" alt="The Living Room" loading="lazy"></figure><div class="gcap"><span class="eyebrow">The Living Room</span></div></div><div class="row pair fade"><figure data-full="../images/gallery/art/a012.jpg"><img src="../images/gallery/art/a012.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a027.jpg"><img src="../images/gallery/art/a027.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure></div><div class="row full fade"><figure data-full="../images/gallery/full/g07.jpg"><img src="../images/gallery/full/g07.jpg" alt="The Kitchen" loading="lazy"></figure><div class="gcap"><span class="eyebrow">The Kitchen</span><em>Walnut, stone and brass, built to gather around.</em></div></div><div class="row pair fade"><figure data-full="../images/gallery/art/a044.jpg"><img src="../images/gallery/art/a044.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a050.jpg"><img src="../images/gallery/art/a050.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure></div><div class="row split fade"><figure data-full="../images/gallery/full/g10.jpg"><img src="../images/gallery/full/g10.jpg" alt="Dining" loading="lazy"></figure><figure data-full="../images/gallery/art/a002.jpg"><img src="../images/gallery/art/a002.jpg" alt="Dining" loading="lazy"></figure><div class="gcap"><span class="eyebrow">Dining</span></div></div><div class="row full fade"><figure data-full="../images/gallery/full/g13.jpg"><img src="../images/gallery/full/g13.jpg" alt="The Screened Porch" loading="lazy"></figure><div class="gcap"><span class="eyebrow">The Screened Porch</span><em>A brick fireplace, a wood ceiling, the oak just beyond.</em></div></div><div class="row trio fade"><figure data-full="../images/gallery/art/a031.jpg"><img src="../images/gallery/art/a031.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a024.jpg"><img src="../images/gallery/art/a024.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a008.jpg"><img src="../images/gallery/art/a008.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure></div><div class="row full fade"><figure data-full="../images/gallery/full/g15.jpg"><img src="../images/gallery/full/g15.jpg" alt="The Primary Suite" loading="lazy"></figure><div class="gcap"><span class="eyebrow">The Primary Suite</span></div></div><div class="row trio fade"><figure data-full="../images/gallery/art/a032.jpg"><img src="../images/gallery/art/a032.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a035.jpg"><img src="../images/gallery/art/a035.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a034.jpg"><img src="../images/gallery/art/a034.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure></div><div class="row pair fade"><figure data-full="../images/gallery/art/a043.jpg"><img src="../images/gallery/art/a043.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure><figure data-full="../images/gallery/art/a033.jpg"><img src="../images/gallery/art/a033.jpg" alt="3321 Auburn Avenue" loading="lazy"></figure></div><div class="row full fade"><figure data-full="../images/gallery/full/g21.jpg"><img src="../images/gallery/full/g21.jpg" alt="Upstairs" loading="lazy"></figure><div class="gcap"><span class="eyebrow">Upstairs</span></div></div><div class="row full fade"><figure data-full="../images/gallery/full/g23.jpg"><img src="../images/gallery/full/g23.jpg" alt="The Backyard" loading="lazy"></figure><div class="gcap"><span class="eyebrow">The Backyard</span><em>Flat, fenced and landscaped, with room for a pool.</em></div></div><div class="row full fade"><figure data-full="../images/gallery/full/g03.jpg"><img src="../images/gallery/full/g03.jpg" alt="Sedgefield" loading="lazy"></figure><div class="gcap"><span class="eyebrow">Sedgefield</span><em>Minutes from South End, with Uptown on the horizon.</em></div></div>
+  </div>
+</section>
+<!--PHOTOS--><section class="photos pad" id="photos"><div class="wrap phead fade"><div class="eyebrow red">Every Photo</div><h2 class="h2" style="margin-top:20px">Every <em>room.</em></h2><p class="lead">All 132 photos. Pick a room, swipe through, tap to go full screen.</p></div><div class="ptabs wrap fade"><div class="pchips"><button class="on" data-i="0">The Exterior <i>12</i></button><button class="" data-i="1">From Above <i>3</i></button><button class="" data-i="2">Arrival <i>2</i></button><button class="" data-i="3">The Living Room <i>16</i></button><button class="" data-i="4">The Kitchen <i>14</i></button><button class="" data-i="5">Dining <i>12</i></button><button class="" data-i="6">Everyday Spaces <i>3</i></button><button class="" data-i="7">The Screened Porch <i>11</i></button><button class="" data-i="8">The Primary Suite <i>17</i></button><button class="" data-i="9">Upstairs <i>4</i></button><button class="" data-i="10">The Bonus Room <i>13</i></button><button class="" data-i="11">The Flex Room <i>2</i></button><button class="" data-i="12">The Bedrooms <i>12</i></button><button class="" data-i="13">The Baths <i>6</i></button><button class="" data-i="14">The Backyard <i>5</i></button></div><span class="parr"><button aria-label="Scroll back" data-d="-1">←</button><button aria-label="Scroll forward" data-d="1">→</button></span></div><div class="pview fade"><div class="pchap on" data-ch="The Exterior"><div class="pstrip"><figure style="aspect-ratio:3600/2023" data-n="132"><img src="../images/photos/t/132.jpg" data-full="../images/photos/f/132.jpg" alt="The Exterior: Full brick, board-and-batten, black-framed windows" width="3600" height="2023" loading="lazy" decoding="async"><figcaption>Full brick, board-and-batten, black-framed windows</figcaption></figure><figure style="aspect-ratio:3600/2023" data-n="129"><img src="../images/photos/t/129.jpg" data-full="../images/photos/f/129.jpg" alt="The Exterior: Two gables and a deep front lawn" width="3600" height="2023" loading="lazy" decoding="async"><figcaption>Two gables and a deep front lawn</figcaption></figure><figure style="aspect-ratio:3600/2023" data-n="130"><img src="../images/photos/t/130.jpg" data-full="../images/photos/f/130.jpg" alt="The Exterior: Straight on from Auburn Avenue" width="3600" height="2023" loading="lazy" decoding="async"><figcaption>Straight on from Auburn Avenue</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="119"><img src="../images/photos/t/119.jpg" data-full="../images/photos/f/119.jpg" alt="The Exterior: The long drive to the garage" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>The long drive to the garage</figcaption></figure><figure style="aspect-ratio:3600/2397" data-n="118"><img src="../images/photos/t/118.jpg" data-full="../images/photos/f/118.jpg" alt="The Exterior: Brick, board-and-batten and a covered entry" width="3600" height="2397" loading="lazy" decoding="async"><figcaption>Brick, board-and-batten and a covered entry</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="121"><img src="../images/photos/t/121.jpg" data-full="../images/photos/f/121.jpg" alt="The Exterior: New sod, new trees, mature oaks overhead" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>New sod, new trees, mature oaks overhead</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="120"><img src="../images/photos/t/120.jpg" data-full="../images/photos/f/120.jpg" alt="The Exterior: The front lawn under the big oak" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>The front lawn under the big oak</figcaption></figure><figure style="aspect-ratio:2398/3600" data-n="123"><img src="../images/photos/t/123.jpg" data-full="../images/photos/f/123.jpg" alt="The Exterior: The front gable in afternoon light" width="2398" height="3600" loading="lazy" decoding="async"><figcaption>The front gable in afternoon light</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="122"><img src="../images/photos/t/122.jpg" data-full="../images/photos/f/122.jpg" alt="The Exterior: Glass front doors under a timber bracket" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Glass front doors under a timber bracket</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="125"><img src="../images/photos/t/125.jpg" data-full="../images/photos/f/125.jpg" alt="The Exterior: The motor court" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>The motor court</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="126"><img src="../images/photos/t/126.jpg" data-full="../images/photos/f/126.jpg" alt="The Exterior: The garage, with a metal awning" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>The garage, with a metal awning</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="54"><img src="../images/photos/t/054.jpg" data-full="../images/photos/f/054.jpg" alt="The Exterior: The garage door, up close" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The garage door, up close</figcaption></figure></div></div><div class="pchap" data-ch="From Above"><div class="pstrip"><figure style="aspect-ratio:3600/2023" data-n="127"><img src="../images/photos/t/127.jpg" data-full="../images/photos/f/127.jpg" alt="From Above: Uptown on the horizon" width="3600" height="2023" loading="lazy" decoding="async"><figcaption>Uptown on the horizon</figcaption></figure><figure style="aspect-ratio:3600/2023" data-n="128"><img src="../images/photos/t/128.jpg" data-full="../images/photos/f/128.jpg" alt="From Above: Sedgefield&#x27;s tree canopy, Uptown beyond" width="3600" height="2023" loading="lazy" decoding="async"><figcaption>Sedgefield&#x27;s tree canopy, Uptown beyond</figcaption></figure><figure style="aspect-ratio:3600/2023" data-n="131"><img src="../images/photos/t/131.jpg" data-full="../images/photos/f/131.jpg" alt="From Above: Looking out over the neighborhood" width="3600" height="2023" loading="lazy" decoding="async"><figcaption>Looking out over the neighborhood</figcaption></figure></div></div><div class="pchap" data-ch="Arrival"><div class="pstrip"><figure style="aspect-ratio:3600/2414" data-n="108"><img src="../images/photos/t/108.jpg" data-full="../images/photos/f/108.jpg" alt="Arrival: Steel-and-glass doors open to the foyer" width="3600" height="2414" loading="lazy" decoding="async"><figcaption>Steel-and-glass doors open to the foyer</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="52"><img src="../images/photos/t/052.jpg" data-full="../images/photos/f/052.jpg" alt="Arrival: The stair, tucked off the entry" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The stair, tucked off the entry</figcaption></figure></div></div><div class="pchap" data-ch="The Living Room"><div class="pstrip"><figure style="aspect-ratio:3600/2404" data-n="103"><img src="../images/photos/t/103.jpg" data-full="../images/photos/f/103.jpg" alt="The Living Room: Fireplace wall, steel doors to the porch" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>Fireplace wall, steel doors to the porch</figcaption></figure><figure style="aspect-ratio:3600/2404" data-n="104"><img src="../images/photos/t/104.jpg" data-full="../images/photos/f/104.jpg" alt="The Living Room: Open from the living room to the kitchen" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>Open from the living room to the kitchen</figcaption></figure><figure style="aspect-ratio:3600/2410" data-n="105"><img src="../images/photos/t/105.jpg" data-full="../images/photos/f/105.jpg" alt="The Living Room: A wall of glass to the screened porch" width="3600" height="2410" loading="lazy" decoding="async"><figcaption>A wall of glass to the screened porch</figcaption></figure><figure style="aspect-ratio:3600/2409" data-n="106"><img src="../images/photos/t/106.jpg" data-full="../images/photos/f/106.jpg" alt="The Living Room: Room for a big sectional and then some" width="3600" height="2409" loading="lazy" decoding="async"><figcaption>Room for a big sectional and then some</figcaption></figure><figure style="aspect-ratio:3600/2405" data-n="107"><img src="../images/photos/t/107.jpg" data-full="../images/photos/f/107.jpg" alt="The Living Room: Light from two sides" width="3600" height="2405" loading="lazy" decoding="async"><figcaption>Light from two sides</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="53"><img src="../images/photos/t/053.jpg" data-full="../images/photos/f/053.jpg" alt="The Living Room: The fireplace, framed in white" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The fireplace, framed in white</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="55"><img src="../images/photos/t/055.jpg" data-full="../images/photos/f/055.jpg" alt="The Living Room: Clean surround, simple mantel" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Clean surround, simple mantel</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="26"><img src="../images/photos/t/026.jpg" data-full="../images/photos/f/026.jpg" alt="The Living Room: Seen through the dining room&#x27;s doors" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Seen through the dining room&#x27;s doors</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="27"><img src="../images/photos/t/027.jpg" data-full="../images/photos/f/027.jpg" alt="The Living Room: Layered and lived-in" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Layered and lived-in</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="29"><img src="../images/photos/t/029.jpg" data-full="../images/photos/f/029.jpg" alt="The Living Room: Looking back toward the front of the house" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Looking back toward the front of the house</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="45"><img src="../images/photos/t/045.jpg" data-full="../images/photos/f/045.jpg" alt="The Living Room: Centered on the fireplace" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Centered on the fireplace</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="13"><img src="../images/photos/t/013.jpg" data-full="../images/photos/f/013.jpg" alt="The Living Room: Living room into kitchen" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Living room into kitchen</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="23"><img src="../images/photos/t/023.jpg" data-full="../images/photos/f/023.jpg" alt="The Living Room: Soft light, soft furniture" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Soft light, soft furniture</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="37"><img src="../images/photos/t/037.jpg" data-full="../images/photos/f/037.jpg" alt="The Living Room: The console wall" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The console wall</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="7"><img src="../images/photos/t/007.jpg" data-full="../images/photos/f/007.jpg" alt="The Living Room: A quiet corner by the windows" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>A quiet corner by the windows</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="36"><img src="../images/photos/t/036.jpg" data-full="../images/photos/f/036.jpg" alt="The Living Room: From the sofa to the kitchen island" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>From the sofa to the kitchen island</figcaption></figure></div></div><div class="pchap" data-ch="The Kitchen"><div class="pstrip"><figure style="aspect-ratio:3600/2408" data-n="95"><img src="../images/photos/t/095.jpg" data-full="../images/photos/f/095.jpg" alt="The Kitchen: Walnut island, white cabinets, glass-front uppers" width="3600" height="2408" loading="lazy" decoding="async"><figcaption>Walnut island, white cabinets, glass-front uppers</figcaption></figure><figure style="aspect-ratio:3600/2406" data-n="96"><img src="../images/photos/t/096.jpg" data-full="../images/photos/f/096.jpg" alt="The Kitchen: Marble-look island and a pro range" width="3600" height="2406" loading="lazy" decoding="async"><figcaption>Marble-look island and a pro range</figcaption></figure><figure style="aspect-ratio:3600/2404" data-n="97"><img src="../images/photos/t/097.jpg" data-full="../images/photos/f/097.jpg" alt="The Kitchen: The island faces the living room" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>The island faces the living room</figcaption></figure><figure style="aspect-ratio:3600/2404" data-n="98"><img src="../images/photos/t/098.jpg" data-full="../images/photos/f/098.jpg" alt="The Kitchen: Counter seating at the island" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>Counter seating at the island</figcaption></figure><figure style="aspect-ratio:3600/2401" data-n="99"><img src="../images/photos/t/099.jpg" data-full="../images/photos/f/099.jpg" alt="The Kitchen: Pantry door, built-in fridge, microwave drawer" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>Pantry door, built-in fridge, microwave drawer</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="14"><img src="../images/photos/t/014.jpg" data-full="../images/photos/f/014.jpg" alt="The Kitchen: Brass pendants over the island" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Brass pendants over the island</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="15"><img src="../images/photos/t/015.jpg" data-full="../images/photos/f/015.jpg" alt="The Kitchen: The range wall and plaster hood" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The range wall and plaster hood</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="19"><img src="../images/photos/t/019.jpg" data-full="../images/photos/f/019.jpg" alt="The Kitchen: Stools lined up at the island" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Stools lined up at the island</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="21"><img src="../images/photos/t/021.jpg" data-full="../images/photos/f/021.jpg" alt="The Kitchen: Hood, tile and a brass pendant" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Hood, tile and a brass pendant</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="22"><img src="../images/photos/t/022.jpg" data-full="../images/photos/f/022.jpg" alt="The Kitchen: The glass-front hutch" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The glass-front hutch</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="44"><img src="../images/photos/t/044.jpg" data-full="../images/photos/f/044.jpg" alt="The Kitchen: Farmhouse sink with a view out" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Farmhouse sink with a view out</figcaption></figure><figure style="aspect-ratio:2398/3600" data-n="49"><img src="../images/photos/t/049.jpg" data-full="../images/photos/f/049.jpg" alt="The Kitchen: Prep side of the island" width="2398" height="3600" loading="lazy" decoding="async"><figcaption>Prep side of the island</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="50"><img src="../images/photos/t/050.jpg" data-full="../images/photos/f/050.jpg" alt="The Kitchen: Counter-height seating" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Counter-height seating</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="51"><img src="../images/photos/t/051.jpg" data-full="../images/photos/f/051.jpg" alt="The Kitchen: Walnut and stone" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Walnut and stone</figcaption></figure></div></div><div class="pchap" data-ch="Dining"><div class="pstrip"><figure style="aspect-ratio:3600/2401" data-n="101"><img src="../images/photos/t/101.jpg" data-full="../images/photos/f/101.jpg" alt="Dining: Windows and steel doors all around" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>Windows and steel doors all around</figcaption></figure><figure style="aspect-ratio:3600/2405" data-n="102"><img src="../images/photos/t/102.jpg" data-full="../images/photos/f/102.jpg" alt="Dining: Dining next to the kitchen" width="3600" height="2405" loading="lazy" decoding="async"><figcaption>Dining next to the kitchen</figcaption></figure><figure style="aspect-ratio:3600/2407" data-n="110"><img src="../images/photos/t/110.jpg" data-full="../images/photos/f/110.jpg" alt="Dining: Crystal chandelier, detailed ceiling" width="3600" height="2407" loading="lazy" decoding="async"><figcaption>Crystal chandelier, detailed ceiling</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="16"><img src="../images/photos/t/016.jpg" data-full="../images/photos/f/016.jpg" alt="Dining: Room for a full table" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Room for a full table</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="17"><img src="../images/photos/t/017.jpg" data-full="../images/photos/f/017.jpg" alt="Dining: Centered on the window wall" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Centered on the window wall</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="20"><img src="../images/photos/t/020.jpg" data-full="../images/photos/f/020.jpg" alt="Dining: The chandelier, close up" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The chandelier, close up</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="2"><img src="../images/photos/t/002.jpg" data-full="../images/photos/f/002.jpg" alt="Dining: Set for dinner" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Set for dinner</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="5"><img src="../images/photos/t/005.jpg" data-full="../images/photos/f/005.jpg" alt="Dining: Afternoon sun across the table" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Afternoon sun across the table</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="6"><img src="../images/photos/t/006.jpg" data-full="../images/photos/f/006.jpg" alt="Dining: The ceiling detail above" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The ceiling detail above</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="46"><img src="../images/photos/t/046.jpg" data-full="../images/photos/f/046.jpg" alt="Dining: Looking toward the porch doors" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Looking toward the porch doors</figcaption></figure><figure style="aspect-ratio:2398/3600" data-n="48"><img src="../images/photos/t/048.jpg" data-full="../images/photos/f/048.jpg" alt="Dining: Dining in full light" width="2398" height="3600" loading="lazy" decoding="async"><figcaption>Dining in full light</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="25"><img src="../images/photos/t/025.jpg" data-full="../images/photos/f/025.jpg" alt="Dining: Framed by the doorway" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Framed by the doorway</figcaption></figure></div></div><div class="pchap" data-ch="Everyday Spaces"><div class="pstrip"><figure style="aspect-ratio:3600/2400" data-n="109"><img src="../images/photos/t/109.jpg" data-full="../images/photos/f/109.jpg" alt="Everyday Spaces: A walk-in pantry painted deep green" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>A walk-in pantry painted deep green</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="100"><img src="../images/photos/t/100.jpg" data-full="../images/photos/f/100.jpg" alt="Everyday Spaces: Drop zone with a bench, hooks and cubbies" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Drop zone with a bench, hooks and cubbies</figcaption></figure><figure style="aspect-ratio:3600/2402" data-n="94"><img src="../images/photos/t/094.jpg" data-full="../images/photos/f/094.jpg" alt="Everyday Spaces: Laundry with a utility sink and cabinets" width="3600" height="2402" loading="lazy" decoding="async"><figcaption>Laundry with a utility sink and cabinets</figcaption></figure></div></div><div class="pchap" data-ch="The Screened Porch"><div class="pstrip"><figure style="aspect-ratio:3600/2400" data-n="111"><img src="../images/photos/t/111.jpg" data-full="../images/photos/f/111.jpg" alt="The Screened Porch: Stone floor, wood ceiling, brick fireplace" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Stone floor, wood ceiling, brick fireplace</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="112"><img src="../images/photos/t/112.jpg" data-full="../images/photos/f/112.jpg" alt="The Screened Porch: Screened on three sides" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Screened on three sides</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="115"><img src="../images/photos/t/115.jpg" data-full="../images/photos/f/115.jpg" alt="The Screened Porch: Steel doors back to the living room" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Steel doors back to the living room</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="116"><img src="../images/photos/t/116.jpg" data-full="../images/photos/f/116.jpg" alt="The Screened Porch: An outdoor living room" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>An outdoor living room</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="24"><img src="../images/photos/t/024.jpg" data-full="../images/photos/f/024.jpg" alt="The Screened Porch: Bistro table in the corner" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Bistro table in the corner</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="28"><img src="../images/photos/t/028.jpg" data-full="../images/photos/f/028.jpg" alt="The Screened Porch: A curved sofa facing the yard" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>A curved sofa facing the yard</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="31"><img src="../images/photos/t/031.jpg" data-full="../images/photos/f/031.jpg" alt="The Screened Porch: The brick fireplace" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The brick fireplace</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="56"><img src="../images/photos/t/056.jpg" data-full="../images/photos/f/056.jpg" alt="The Screened Porch: Fire on, doors open" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Fire on, doors open</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="3"><img src="../images/photos/t/003.jpg" data-full="../images/photos/f/003.jpg" alt="The Screened Porch: The coffee table and fireplace" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The coffee table and fireplace</figcaption></figure><figure style="aspect-ratio:2023/3600" data-n="4"><img src="../images/photos/t/004.jpg" data-full="../images/photos/f/004.jpg" alt="The Screened Porch: Big screens, big trees" width="2023" height="3600" loading="lazy" decoding="async"><figcaption>Big screens, big trees</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="8"><img src="../images/photos/t/008.jpg" data-full="../images/photos/f/008.jpg" alt="The Screened Porch: Brick, stone and daylight" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Brick, stone and daylight</figcaption></figure></div></div><div class="pchap" data-ch="The Primary Suite"><div class="pstrip"><figure style="aspect-ratio:3600/2403" data-n="84"><img src="../images/photos/t/084.jpg" data-full="../images/photos/f/084.jpg" alt="The Primary Suite: Windows on two walls" width="3600" height="2403" loading="lazy" decoding="async"><figcaption>Windows on two walls</figcaption></figure><figure style="aspect-ratio:3600/2401" data-n="85"><img src="../images/photos/t/085.jpg" data-full="../images/photos/f/085.jpg" alt="The Primary Suite: Plenty of room around the bed" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>Plenty of room around the bed</figcaption></figure><figure style="aspect-ratio:3600/2401" data-n="90"><img src="../images/photos/t/090.jpg" data-full="../images/photos/f/090.jpg" alt="The Primary Suite: A sliding barn door" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>A sliding barn door</figcaption></figure><figure style="aspect-ratio:3600/2406" data-n="91"><img src="../images/photos/t/091.jpg" data-full="../images/photos/f/091.jpg" alt="The Primary Suite: Bright from morning on" width="3600" height="2406" loading="lazy" decoding="async"><figcaption>Bright from morning on</figcaption></figure><figure style="aspect-ratio:3600/2417" data-n="93"><img src="../images/photos/t/093.jpg" data-full="../images/photos/f/093.jpg" alt="The Primary Suite: A sitting area at the foot of the bed" width="3600" height="2417" loading="lazy" decoding="async"><figcaption>A sitting area at the foot of the bed</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="30"><img src="../images/photos/t/030.jpg" data-full="../images/photos/f/030.jpg" alt="The Primary Suite: Soft light, soft linens" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Soft light, soft linens</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="57"><img src="../images/photos/t/057.jpg" data-full="../images/photos/f/057.jpg" alt="The Primary Suite: Morning light by the window" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Morning light by the window</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="32"><img src="../images/photos/t/032.jpg" data-full="../images/photos/f/032.jpg" alt="The Primary Suite: The bed wall" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The bed wall</figcaption></figure><figure style="aspect-ratio:3600/2402" data-n="86"><img src="../images/photos/t/086.jpg" data-full="../images/photos/f/086.jpg" alt="The Primary Suite: The primary bath" width="3600" height="2402" loading="lazy" decoding="async"><figcaption>The primary bath</figcaption></figure><figure style="aspect-ratio:3600/2405" data-n="87"><img src="../images/photos/t/087.jpg" data-full="../images/photos/f/087.jpg" alt="The Primary Suite: Two vanities" width="3600" height="2405" loading="lazy" decoding="async"><figcaption>Two vanities</figcaption></figure><figure style="aspect-ratio:3600/2407" data-n="88"><img src="../images/photos/t/088.jpg" data-full="../images/photos/f/088.jpg" alt="The Primary Suite: Freestanding tub and a glass shower" width="3600" height="2407" loading="lazy" decoding="async"><figcaption>Freestanding tub and a glass shower</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="35"><img src="../images/photos/t/035.jpg" data-full="../images/photos/f/035.jpg" alt="The Primary Suite: The tub under the window" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The tub under the window</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="34"><img src="../images/photos/t/034.jpg" data-full="../images/photos/f/034.jpg" alt="The Primary Suite: Brass mirror and sconces" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Brass mirror and sconces</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="33"><img src="../images/photos/t/033.jpg" data-full="../images/photos/f/033.jpg" alt="The Primary Suite: Mirror and a vanity corner" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Mirror and a vanity corner</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="43"><img src="../images/photos/t/043.jpg" data-full="../images/photos/f/043.jpg" alt="The Primary Suite: The shower, floor-to-ceiling tile" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The shower, floor-to-ceiling tile</figcaption></figure><figure style="aspect-ratio:3600/2408" data-n="89"><img src="../images/photos/t/089.jpg" data-full="../images/photos/f/089.jpg" alt="The Primary Suite: Walk-in closet with double hang" width="3600" height="2408" loading="lazy" decoding="async"><figcaption>Walk-in closet with double hang</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="92"><img src="../images/photos/t/092.jpg" data-full="../images/photos/f/092.jpg" alt="The Primary Suite: Closet shelving on every wall" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Closet shelving on every wall</figcaption></figure></div></div><div class="pchap" data-ch="Upstairs"><div class="pstrip"><figure style="aspect-ratio:3600/2400" data-n="81"><img src="../images/photos/t/081.jpg" data-full="../images/photos/f/081.jpg" alt="Upstairs: The landing and stair rail" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>The landing and stair rail</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="42"><img src="../images/photos/t/042.jpg" data-full="../images/photos/f/042.jpg" alt="Upstairs: Landing light, black railings" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Landing light, black railings</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="38"><img src="../images/photos/t/038.jpg" data-full="../images/photos/f/038.jpg" alt="Upstairs: Down the upstairs hall" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Down the upstairs hall</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="40"><img src="../images/photos/t/040.jpg" data-full="../images/photos/f/040.jpg" alt="Upstairs: Upstairs hallway" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Upstairs hallway</figcaption></figure></div></div><div class="pchap" data-ch="The Bonus Room"><div class="pstrip"><figure style="aspect-ratio:3600/2405" data-n="72"><img src="../images/photos/t/072.jpg" data-full="../images/photos/f/072.jpg" alt="The Bonus Room: Vaulted ceiling, green wainscot" width="3600" height="2405" loading="lazy" decoding="async"><figcaption>Vaulted ceiling, green wainscot</figcaption></figure><figure style="aspect-ratio:3600/2402" data-n="73"><img src="../images/photos/t/073.jpg" data-full="../images/photos/f/073.jpg" alt="The Bonus Room: Big enough for a game room and a lounge" width="3600" height="2402" loading="lazy" decoding="async"><figcaption>Big enough for a game room and a lounge</figcaption></figure><figure style="aspect-ratio:3600/2403" data-n="75"><img src="../images/photos/t/075.jpg" data-full="../images/photos/f/075.jpg" alt="The Bonus Room: Sofa, chairs and a game table" width="3600" height="2403" loading="lazy" decoding="async"><figcaption>Sofa, chairs and a game table</figcaption></figure><figure style="aspect-ratio:3600/2407" data-n="76"><img src="../images/photos/t/076.jpg" data-full="../images/photos/f/076.jpg" alt="The Bonus Room: Open and bright" width="3600" height="2407" loading="lazy" decoding="async"><figcaption>Open and bright</figcaption></figure><figure style="aspect-ratio:3600/2407" data-n="77"><img src="../images/photos/t/077.jpg" data-full="../images/photos/f/077.jpg" alt="The Bonus Room: The game-table end" width="3600" height="2407" loading="lazy" decoding="async"><figcaption>The game-table end</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="9"><img src="../images/photos/t/009.jpg" data-full="../images/photos/f/009.jpg" alt="The Bonus Room: A reading chair by the window" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>A reading chair by the window</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="10"><img src="../images/photos/t/010.jpg" data-full="../images/photos/f/010.jpg" alt="The Bonus Room: Game table under the art wall" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Game table under the art wall</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="11"><img src="../images/photos/t/011.jpg" data-full="../images/photos/f/011.jpg" alt="The Bonus Room: Wainscot and a vaulted ceiling" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Wainscot and a vaulted ceiling</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="12"><img src="../images/photos/t/012.jpg" data-full="../images/photos/f/012.jpg" alt="The Bonus Room: Cozy by the window" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Cozy by the window</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="18"><img src="../images/photos/t/018.jpg" data-full="../images/photos/f/018.jpg" alt="The Bonus Room: The lounge side" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>The lounge side</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="39"><img src="../images/photos/t/039.jpg" data-full="../images/photos/f/039.jpg" alt="The Bonus Room: Game table and floor lamp" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Game table and floor lamp</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="41"><img src="../images/photos/t/041.jpg" data-full="../images/photos/f/041.jpg" alt="The Bonus Room: Paneling and light" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>Paneling and light</figcaption></figure><figure style="aspect-ratio:2400/3600" data-n="47"><img src="../images/photos/t/047.jpg" data-full="../images/photos/f/047.jpg" alt="The Bonus Room: A sofa under the windows" width="2400" height="3600" loading="lazy" decoding="async"><figcaption>A sofa under the windows</figcaption></figure></div></div><div class="pchap" data-ch="The Flex Room"><div class="pstrip"><figure style="aspect-ratio:3600/2401" data-n="66"><img src="../images/photos/t/066.jpg" data-full="../images/photos/f/066.jpg" alt="The Flex Room: French doors and full-height green paneling" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>French doors and full-height green paneling</figcaption></figure><figure style="aspect-ratio:3600/2408" data-n="70"><img src="../images/photos/t/070.jpg" data-full="../images/photos/f/070.jpg" alt="The Flex Room: Paneled on every wall" width="3600" height="2408" loading="lazy" decoding="async"><figcaption>Paneled on every wall</figcaption></figure></div></div><div class="pchap" data-ch="The Bedrooms"><div class="pstrip"><figure style="aspect-ratio:3600/2401" data-n="58"><img src="../images/photos/t/058.jpg" data-full="../images/photos/f/058.jpg" alt="The Bedrooms: Bedroom with an en-suite bath" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>Bedroom with an en-suite bath</figcaption></figure><figure style="aspect-ratio:3600/2408" data-n="59"><img src="../images/photos/t/059.jpg" data-full="../images/photos/f/059.jpg" alt="The Bedrooms: Hardwoods and a ceiling fan" width="3600" height="2408" loading="lazy" decoding="async"><figcaption>Hardwoods and a ceiling fan</figcaption></figure><figure style="aspect-ratio:3600/2406" data-n="60"><img src="../images/photos/t/060.jpg" data-full="../images/photos/f/060.jpg" alt="The Bedrooms: Windows on two sides" width="3600" height="2406" loading="lazy" decoding="async"><figcaption>Windows on two sides</figcaption></figure><figure style="aspect-ratio:3600/2403" data-n="61"><img src="../images/photos/t/061.jpg" data-full="../images/photos/f/061.jpg" alt="The Bedrooms: Sun across the floor" width="3600" height="2403" loading="lazy" decoding="async"><figcaption>Sun across the floor</figcaption></figure><figure style="aspect-ratio:3600/2404" data-n="62"><img src="../images/photos/t/062.jpg" data-full="../images/photos/f/062.jpg" alt="The Bedrooms: A big secondary bedroom" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>A big secondary bedroom</figcaption></figure><figure style="aspect-ratio:3600/2407" data-n="64"><img src="../images/photos/t/064.jpg" data-full="../images/photos/f/064.jpg" alt="The Bedrooms: Vaulted ceiling and a triple window" width="3600" height="2407" loading="lazy" decoding="async"><figcaption>Vaulted ceiling and a triple window</figcaption></figure><figure style="aspect-ratio:3600/2408" data-n="67"><img src="../images/photos/t/067.jpg" data-full="../images/photos/f/067.jpg" alt="The Bedrooms: Treetop views" width="3600" height="2408" loading="lazy" decoding="async"><figcaption>Treetop views</figcaption></figure><figure style="aspect-ratio:3600/2401" data-n="69"><img src="../images/photos/t/069.jpg" data-full="../images/photos/f/069.jpg" alt="The Bedrooms: En-suite access" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>En-suite access</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="71"><img src="../images/photos/t/071.jpg" data-full="../images/photos/f/071.jpg" alt="The Bedrooms: Three windows, lots of light" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Three windows, lots of light</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="78"><img src="../images/photos/t/078.jpg" data-full="../images/photos/f/078.jpg" alt="The Bedrooms: Bedroom with a vaulted ceiling" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Bedroom with a vaulted ceiling</figcaption></figure><figure style="aspect-ratio:3600/2408" data-n="79"><img src="../images/photos/t/079.jpg" data-full="../images/photos/f/079.jpg" alt="The Bedrooms: Bedroom corner" width="3600" height="2408" loading="lazy" decoding="async"><figcaption>Bedroom corner</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="80"><img src="../images/photos/t/080.jpg" data-full="../images/photos/f/080.jpg" alt="The Bedrooms: Open to the hall" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Open to the hall</figcaption></figure></div></div><div class="pchap" data-ch="The Baths"><div class="pstrip"><figure style="aspect-ratio:3600/2401" data-n="63"><img src="../images/photos/t/063.jpg" data-full="../images/photos/f/063.jpg" alt="The Baths: Glass shower and a wood vanity" width="3600" height="2401" loading="lazy" decoding="async"><figcaption>Glass shower and a wood vanity</figcaption></figure><figure style="aspect-ratio:3600/2404" data-n="65"><img src="../images/photos/t/065.jpg" data-full="../images/photos/f/065.jpg" alt="The Baths: Navy vanity, tub-shower" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>Navy vanity, tub-shower</figcaption></figure><figure style="aspect-ratio:3600/2403" data-n="74"><img src="../images/photos/t/074.jpg" data-full="../images/photos/f/074.jpg" alt="The Baths: Green tile shower" width="3600" height="2403" loading="lazy" decoding="async"><figcaption>Green tile shower</figcaption></figure><figure style="aspect-ratio:3600/2404" data-n="82"><img src="../images/photos/t/082.jpg" data-full="../images/photos/f/082.jpg" alt="The Baths: Gold fixtures, marble-look floor" width="3600" height="2404" loading="lazy" decoding="async"><figcaption>Gold fixtures, marble-look floor</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="68"><img src="../images/photos/t/068.jpg" data-full="../images/photos/f/068.jpg" alt="The Baths: Walnut vanity and a dark stone top" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Walnut vanity and a dark stone top</figcaption></figure><figure style="aspect-ratio:3600/2402" data-n="83"><img src="../images/photos/t/083.jpg" data-full="../images/photos/f/083.jpg" alt="The Baths: The powder room, grasscloth walls" width="3600" height="2402" loading="lazy" decoding="async"><figcaption>The powder room, grasscloth walls</figcaption></figure></div></div><div class="pchap" data-ch="The Backyard"><div class="pstrip"><figure style="aspect-ratio:3600/2400" data-n="113"><img src="../images/photos/t/113.jpg" data-full="../images/photos/f/113.jpg" alt="The Backyard: Flat, fenced and fully landscaped" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Flat, fenced and fully landscaped</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="114"><img src="../images/photos/t/114.jpg" data-full="../images/photos/f/114.jpg" alt="The Backyard: The back of the house" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>The back of the house</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="117"><img src="../images/photos/t/117.jpg" data-full="../images/photos/f/117.jpg" alt="The Backyard: Plenty of room for a pool" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>Plenty of room for a pool</figcaption></figure><figure style="aspect-ratio:3600/2400" data-n="124"><img src="../images/photos/t/124.jpg" data-full="../images/photos/f/124.jpg" alt="The Backyard: New privacy fence, new plantings" width="3600" height="2400" loading="lazy" decoding="async"><figcaption>New privacy fence, new plantings</figcaption></figure><figure style="aspect-ratio:3600/2388" data-n="1"><img src="../images/photos/t/001.jpg" data-full="../images/photos/f/001.jpg" alt="The Backyard: The yard in full sun" width="3600" height="2388" loading="lazy" decoding="async"><figcaption>The yard in full sun</figcaption></figure></div></div></div></section><!--/PHOTOS-->
+<section class="tour pad" id="tour" aria-label="3D tour">
+  <div class="wrap">
+    <div class="head fade"><div><div class="eyebrow red">3D Tour</div><h2 class="h2" style="margin-top:14px">Walk it <em>yourself.</em></h2></div>
+      <p class="lead">Every room, at your own pace. Drag to look around, tap to move.</p></div>
+    <div class="frame fade" id="tourFrame" data-src="https://www.zillow.com/view-imx/822d51aa-2c99-4818-a49b-13536fb84feb?wl=true&setAttribution=mls&initialViewType=pano"><img src="../images/photos/f/104.jpg" alt="3D tour of 3321 Auburn Avenue" loading="lazy"><div class="go"><b>3D</b><span class="eyebrow">Start the tour</span></div></div>
+    <p class="alt">Better on a big screen? <a href="https://www.zillow.com/view-imx/822d51aa-2c99-4818-a49b-13536fb84feb?wl=true&setAttribution=mls&initialViewType=pano" target="_blank" rel="noopener">Open the tour full screen</a>.</p>
+  </div>
+</section>
+
+<section class="smart pad" id="smart">
+  <div class="wrap">
+    <div class="top">
+      <div class="fade">
+        <div class="eyebrow">Smart Home by ALT3</div>
+        <h2 class="h2" style="margin-top:20px">Smart from <em>day one.</em></h2>
+        <div class="rule"></div>
+        <p class="lead" style="color:rgba(255,255,255,.8)">Built in now. Ready for whatever comes next. One voice and one app run the lights, the music and the front door, and the wiring for everything else is already in the walls.</p>
+        <p style="margin-top:20px;color:rgba(255,255,255,.55)">Try it. Tap a phrase to see what the house does.</p>
+      </div>
+      <div class="console fade" id="console">
+        <div class="bar"><span class="eyebrow">Josh.ai · 3321 Auburn</span><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="said" id="said">“Play jazz in the kitchen.”</div>
+        <div class="reply" id="reply">Tap a phrase below.</div>
+        <div class="rooms" id="rooms">
+          <div class="room" data-r="kitchen"><div class="glow"></div><b>Kitchen</b><span></span><div class="lv"><i></i></div></div>
+          <div class="room" data-r="living"><div class="glow"></div><b>Living</b><span></span><div class="lv"><i></i></div></div>
+          <div class="room" data-r="dining"><div class="glow"></div><b>Dining</b><span></span><div class="lv"><i></i></div></div>
+          <div class="room" data-r="porch"><div class="glow"></div><b>Porch</b><span></span><div class="lv"><i></i></div></div>
+          <div class="room" data-r="primary"><div class="glow"></div><b>Primary</b><span></span><div class="lv"><i></i></div></div>
+          <div class="room" data-r="door"><div class="glow"></div><b>Front Door</b><span></span><div class="lv"><i></i></div></div>
+        </div>
+        <div class="cmds" id="cmds">
+          <button data-c="jazz">“Play jazz in the kitchen.”</button>
+          <button data-c="dinner">“Dinner party.”</button>
+          <button data-c="porch">“Porch to warm amber.”</button>
+          <button data-c="door">“Who’s at the door?”</button>
+          <button data-c="night">“Goodnight.”</button>
+        </div>
+      </div>
+    </div>
+
+    <figure class="joshband fade">
+      <img src="../images/josh-touchscreen.jpg" alt="Josh.ai touchscreen on a wall" loading="lazy">
+      <figcaption><span class="eyebrow">Josh.ai</span><b>Say it. Or tap it.</b><p>Natural-language voice control with privacy built in, plus a touchscreen for every scene, song and light.</p></figcaption>
+      <div class="tag" style="left:16px;top:16px">Manufacturer image · representative</div>
+    </figure>
+
+    <div class="eyebrow" style="margin-top:clamp(80px,10vw,130px)">The Stack · Included with the home, installed and ready</div>
+    <div class="stack">
+      <div class="prod fade"><div class="art a-josh"><div class="ring"></div><div class="mic"></div></div>
+        <div class="meta"><span class="n">01</span><h4>Josh.ai</h4><p>AI voice and touch control, private by design. One voice for the whole house.</p></div></div>
+      <div class="prod fade"><div class="art a-lutron"><div class="keypad"><i class="on"></i><i></i><i></i><i></i><em></em></div></div>
+        <div class="meta"><span class="n">02</span><h4>Lutron Lighting</h4><p>Smart dimming with Sunnata keypads and one-touch scenes.</p></div></div>
+      <div class="prod fade"><div class="art a-hue"><div class="orb"></div></div>
+        <div class="meta"><span class="n">03</span><h4>Philips Hue</h4><p>Color lighting in the living room, kitchen, dining room and porch.</p></div></div>
+      <div class="prod fade"><div class="art a-audio"><div class="grille"></div><div class="wv w1"></div><div class="wv w2"></div></div>
+        <div class="meta"><span class="n">04</span><h4>Paradigm + Sonos</h4><p>In-ceiling kitchen speakers powered by a Sonos Amp.</p></div></div>
+      <div class="prod fade"><div class="art a-door"><div class="bell"><b></b><s></s></div></div>
+        <div class="meta"><span class="n">05</span><h4>Video Doorbell</h4><p>See and speak with visitors from the touchscreen or your phone.</p></div></div>
+      <div class="prod fade"><div class="art a-wifi"><div class="arc r3"></div><div class="arc r2"></div><div class="arc r1"></div><div class="dot"></div></div>
+        <div class="meta"><span class="n">06</span><h4>Wi-Fi 7 Network</h4><p>A managed, enterprise-grade network. The backbone of it all.</p></div></div>
+    </div>
+    <div class="support fade"><div class="rule"></div>Welcome to the ALT3 family. Your first year of 24/7 support and system monitoring is included.</div>
+  </div>
+</section>
+
+<section class="prewire" id="prewire" style="padding:clamp(60px,8vw,110px) 0">
+  <div class="wrap">
+    <div class="pw-short fade">
+      <div>
+        <div class="eyebrow" style="color:rgba(255,255,255,.6)">No retrofit needed</div>
+        <h2 class="h2" style="margin-top:16px;font-size:clamp(38px,5vw,72px)">Prewired for <em>what’s next.</em></h2>
+      </div>
+      <p class="lead" style="color:rgba(255,255,255,.75)">Theater-ready great room and upper den, primary suite, outdoor living, a future pool and extra camera runs. It’s all in the walls already.</p>
+    </div>
+    <div class="creds fade">
+      <div style="display:flex;align-items:center;gap:14px"><img src="../images/alt3-white.png" alt="" style="height:30px;width:auto"><span class="alt3mark" style="color:#fff">ALT3 SMART HOMES</span></div>
+      <p style="margin-top:12px">Invisible by design · One system, one experience · Support that continues</p>
+      <p>Lutron HomeWorks Certified · Hunter Douglas Certified Partner · Veteran owned and operated · alt3smarthomes.com · (704) 326-1144</p>
+    </div>
+  </div>
+</section>
+
+<section class="film pad" id="film" aria-label="The film">
+  <div class="wrap">
+    <div class="head fade">
+      <div><div class="eyebrow red">Watch</div><div class="h2">The <em>Film</em></div></div>
+      <p>A walk through 3321 Auburn, from the curb to the touchscreen.</p>
+    </div>
+    <div class="vid wide fade" data-src="https://player.vimeo.com/progressive_redirect/playback/1242618123/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=fc1dfaffa0f45c825a00fba99fa418c2220d03f7e11088e7b6740555146d9d66">
+      <video playsinline preload="none" poster="../images/film-poster.jpg"></video>
+      <div class="ov"><div class="play"><i></i></div><span class="eyebrow">Play the film · 1:39</span></div>
+    </div>
+    <div class="reel-row">
+      <div class="vid tall fade" data-src="https://player.vimeo.com/progressive_redirect/playback/1242618179/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=1878689348b99fd6ab0ca7d93004b9627b88a4e89f5338879e542d0584d973ce">
+        <video playsinline preload="none" poster="../images/reel-poster.jpg"></video>
+        <div class="ov"><div class="play"><i></i></div><span class="eyebrow">Play · 1:14</span></div>
+      </div>
+      <div class="txt fade">
+        <div class="eyebrow red">Highlight reel</div>
+        <div class="h3">The house, <em>in a minute.</em></div>
+        <p>The quick version: the smart-home touches, the finishes and the rooms that matter most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features pad" id="features">
+  <div class="wrap">
+    <div class="feat-head fade">
+      <div><div class="eyebrow red">Features</div><h2 class="h2" style="margin-top:20px">Every <em>detail</em>.</h2></div>
+      <p class="lead" style="max-width:520px">Designed by KEEN, with landscape-architect grounds and an ALT3 smart home built into the walls.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat fade"><h3><small>01</small>Design &amp; Exterior</h3><ul>
+        <li>Custom architecture by Brinkley Design</li>
+        <li>Full masonry brick with small siding accents</li>
+        <li>Grounds designed by a landscape architect</li>
+        <li>Statement oak tree out front</li>
+        <li>Standing seam metal roof</li>
+        <li>Steel doors and windows</li>
+        <li>Solid wood garage doors with keypad, myQ compatible</li>
+        <li>Two-car side-load garage</li>
+        <li>Flat backyard</li></ul></div>
+      <div class="feat fade"><h3><small>02</small>Outdoor Living</h3><ul>
+        <li>Screened back porch</li>
+        <li>Bluestone porch floors</li>
+        <li>Outdoor fireplace</li>
+        <li>Philips Hue color lighting on the porch</li>
+        <li>Prewired for outdoor TV and speakers</li>
+        <li>Pool-ready: speaker wire stubbed and waiting</li></ul></div>
+      <div class="feat fade"><h3><small>03</small>Interior</h3><ul>
+        <li>10-foot ceilings on the main level</li>
+        <li>Vaulted ceilings in every upstairs room</li>
+        <li>Site-finished white oak hardwood floors</li>
+        <li>Wallpaper details and custom woodwork throughout</li>
+        <li>Cast stone gas fireplace in the living room</li>
+        <li>Laundry room on the main level</li>
+        <li>Large bonus room</li></ul></div>
+      <div class="feat fade"><h3><small>04</small>Kitchen</h3><ul>
+        <li>Walnut cabinetry</li>
+        <li>Walnut-stained island</li>
+        <li>Limestone range hood</li>
+        <li>KitchenAid range</li>
+        <li>Full-size stainless refrigerator and freezer</li>
+        <li>Walk-in pantry with glass accents</li>
+        <li>Paradigm in-ceiling speakers with Sonos Amp</li></ul></div>
+      <div class="feat fade"><h3><small>05</small>Primary Suite</h3><ul>
+        <li>Floor-to-ceiling windows</li>
+        <li>Double vanity</li>
+        <li>Curbless shower</li>
+        <li>Walk-in closet with custom millwork</li>
+        <li>Prewired for TV, speakers and a touchscreen</li></ul></div>
+      <div class="feat fade"><h3><small>06</small>At a Glance</h3><ul>
+        <li>5 bedrooms, 5 full and 2 half baths</li>
+        <li>4,523 heated sq ft (2,131 main, 2,392 upper)</li>
+        <li>Approx. 0.22 acre homesite</li>
+        <li>Built in 2026 by KEEN Building Co</li>
+        <li>10-year Quality Builders Warranty</li>
+        <li>Sedgefield, Charlotte 28209</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="details pad" id="details">
+  <div class="wrap">
+    <div class="dhead fade"><div class="eyebrow red">Property Details</div><h2 class="h2" style="margin-top:20px">Offered at <em>$2,750,000.</em></h2></div>
+    <div class="dgrid fade"><div class="dgrp"><h3>The Basics</h3><dl><dt>List price</dt><dd>$2,750,000</dd><dt>Bedrooms</dt><dd>5 (primary on main)</dd><dt>Bathrooms</dt><dd>5 full, 2 half</dd><dt>Heated sq ft</dt><dd>4,523 (main 2,131 · upper 2,392)</dd><dt>Lot</dt><dd>0.22 acre, level</dd><dt>Year built</dt><dd>2026, new construction</dd><dt>Stories</dt><dd>Two</dd><dt>Style</dt><dd>Contemporary / Transitional</dd><dt>HOA</dt><dd>None</dd><dt>MLS #</dt><dd>4439530</dd></dl></div><div class="dgrp"><h3>Builder &amp; Construction</h3><dl><dt>Builder</dt><dd>KEEN Building Company</dd><dt>Architecture</dt><dd>Brinkley Design</dd><dt>Smart home</dt><dd>ALT3 Smart Homes</dd><dt>Exterior</dt><dd>Full brick with fiber cement accents</dd><dt>Roof</dt><dd>Architectural shingle and standing seam metal</dd><dt>Foundation</dt><dd>Crawl space</dd><dt>Windows &amp; doors</dt><dd>Steel, insulated</dd></dl></div><div class="dgrp"><h3>Systems</h3><dl><dt>Heating</dt><dd>Central forced air, natural gas, zoned</dd><dt>Cooling</dt><dd>Central air, zoned</dd><dt>Water heater</dt><dd>Tankless, gas</dd><dt>Water / sewer</dt><dd>City water, city sewer</dd><dt>Fireplaces</dt><dd>Gas, living room and screened porch</dd><dt>Irrigation</dt><dd>In-ground</dd></dl></div><div class="dgrp"><h3>Kitchen &amp; Interior</h3><dl><dt>Appliances</dt><dd>Gas range, exhaust hood, refrigerator, freezer, dishwasher, microwave, disposal</dd><dt>Kitchen</dt><dd>Island, walk-in pantry</dd><dt>Laundry</dt><dd>Main and upper level</dd><dt>Also</dt><dd>Open floor plan, drop zone, built-ins, walk-in closets, cable prewire</dd></dl></div><div class="dgrp"><h3>Outside &amp; Parking</h3><dl><dt>Porches</dt><dd>Covered front porch, screened rear porch</dd><dt>Garage</dt><dd>Two-car, attached, side-facing</dd><dt>Driveway</dt><dd>Concrete</dd><dt>Lot</dt><dd>Cleared, level infill lot</dd><dt>Pool</dt><dd>None, yard has room for one</dd></dl></div><div class="dgrp"><h3>Location</h3><dl><dt>Neighborhood</dt><dd>Sedgefield</dd><dt>Address</dt><dd>3321 Auburn Avenue, Charlotte, NC 28209</dd><dt>County</dt><dd>Mecklenburg</dd><dt>Zoning</dt><dd>N1-B</dd><dt>Elementary</dt><dd>Dilworth</dd><dt>Middle</dt><dd>Sedgefield</dd><dt>High</dt><dd>Myers Park</dd></dl></div></div>
+    <div class="drooms fade"><h3>Room Dimensions</h3><table><thead><tr><th>Room</th><th>Level</th><th>Size</th></tr></thead><tbody><tr><td>Primary Bedroom</td><td>Main</td><td>20′10″ × 16′8″</td></tr><tr><td>Primary Bath</td><td>Main</td><td>12′2″ × 10′10″</td></tr><tr><td>Living Room</td><td>Main</td><td>23′ × 22′11″</td></tr><tr><td>Kitchen</td><td>Main</td><td>21′2″ × 15′1″</td></tr><tr><td>Dining Room</td><td>Main</td><td>15′ × 12′11″</td></tr><tr><td>Laundry</td><td>Main</td><td>10′8″ × 6′4″</td></tr><tr><td>Drop Zone</td><td>Main</td><td>8′11″ × 5′11″</td></tr><tr><td>Bedroom</td><td>Upper</td><td>16′9″ × 11′10″</td></tr><tr><td>Bedroom</td><td>Upper</td><td>15′1″ × 12′9″</td></tr><tr><td>Bedroom</td><td>Upper</td><td>14′8″ × 14′11″</td></tr><tr><td>Bedroom</td><td>Upper</td><td>14′6″ × 13′10″</td></tr><tr><td>Bonus Room</td><td>Upper</td><td>22′11″ × 19′1″</td></tr><tr><td>Flex Room</td><td>Upper</td><td>11′9″ × 10′9″</td></tr></tbody></table></div>
+    <p class="dnote">Information deemed reliable but not guaranteed. Square footage per professional field measurement; room dimensions approximate. School assignments are subject to change; buyers should verify with CMS.</p>
+  </div>
+</section>
+<section class="warranty pad" id="warranty">
+  <div class="wrap">
+    <div class="w-head fade">
+      <div><div class="eyebrow red">Builder Warranty</div><h2 class="h2" style="margin-top:20px">Warranted. Serviced. <em>Stood behind.</em></h2></div>
+      <p class="lead">A KEEN home doesn’t end at closing. 3321 Auburn conveys with a 10-year Quality Builders Warranty, with workmanship, systems and structural coverage in writing, plus KEEN’s own local service team.</p>
+    </div>
+    <div class="w-nums">
+      <div class="fade"><b data-count="1">1</b><span class="eyebrow">Year</span><p>Workmanship coverage on the home’s construction</p></div>
+      <div class="fade"><b data-count="2">2</b><span class="eyebrow">Years</span><p>Systems coverage: electrical, plumbing, HVAC distribution</p></div>
+      <div class="fade"><b data-count="10">10</b><span class="eyebrow">Years</span><p>Structural warranty on the load-bearing elements of the home</p></div>
+    </div>
+    <div class="w-foot fade">
+      <p class="quote">KEEN is family-owned and based right here in Charlotte, so warranty service isn’t a call center. It’s the team that built the house.</p>
+      <div class="btns" style="margin-top:0">
+        <a class="btn solid" href="https://www.keenbuildingco.com/warranty" target="_blank" rel="noopener">View KEEN’s full warranty</a>
+        <a class="btn" href="https://www.keenbuildingco.com" target="_blank" rel="noopener">Visit KEEN Building Co</a>
+      </div>
+    </div>
+    <p style="color:var(--mute);font-size:13px;margin-top:26px">Warranty provider, terms and coverage levels provided in full at contract.</p>
+  </div>
+</section>
+
+<section class="grounds pad">
+  <div class="wrap">
+    <div class="g-grid">
+      <div class="fade">
+        <div class="eyebrow red">Site Plan</div>
+        <h2 class="h2" style="margin-top:20px">Room for <em>a pool.</em></h2>
+        <div class="rule"></div>
+        <p class="lead">The rendered site plan shows the home as designed and with a future pool. Speaker wire for the pool area is already stubbed.</p>
+        <div class="toggle" id="spToggle"><button class="on" data-v="base">As designed</button><button data-v="pool">Pool option</button></div>
+      </div>
+      <div class="siteplan fade" id="siteplan">
+        <img class="base" src="../images/siteplan.jpg" alt="Site plan rendering">
+        <img class="alt" src="../images/siteplan-pool.jpg" alt="Site plan rendering with pool option">
+        <div class="tag" style="left:20px;top:20px">Rendering · conceptual</div>
+      </div>
+    </div>
+    <div class="eyebrow" style="margin-top:clamp(70px,9vw,120px)">Planting Palette</div>
+    <div class="palette fade" style="margin-top:20px">
+      <div><img src="../images/plant-1.jpg" alt="" loading="lazy"></div><div><img src="../images/plant-2.jpg" alt="" loading="lazy"></div><div><img src="../images/plant-3.jpg" alt="" loading="lazy"></div><div><img src="../images/plant-4.jpg" alt="" loading="lazy"></div><div><img src="../images/plant-5.jpg" alt="" loading="lazy"></div><div><img src="../images/plant-6.jpg" alt="" loading="lazy"></div><div><img src="../images/plant-7.jpg" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="plans pad" id="plans">
+  <div class="wrap">
+    <div class="fade"><div class="eyebrow red">Floor Plans</div><h2 class="h2" style="margin-top:20px">4,523 <em>square feet.</em></h2></div>
+    <div class="tabs" id="planTabs">
+      <button class="on" data-p="../images/plan-main.jpg">Main Level<small>2,131 SF</small></button>
+      <button data-p="../images/plan-upper.jpg">Upper Level<small>2,392 SF</small></button>
+    </div>
+    <div class="plan-view" id="planView"><img id="planImg" src="../images/plan-main.jpg" alt="Floor plan"></div>
+    <p style="color:var(--mute);font-size:14px;margin-top:16px">Heated square footage per field measurement. Plans are for illustration; dimensions approximate.</p>
+  </div>
+</section>
+
+<section class="hood pad" id="hood" style="background:#fff">
+  <div class="wrap grid">
+    <div class="fade">
+      <div class="eyebrow red">The Neighborhood</div>
+      <h2 class="h2" style="margin-top:20px">Sedgefield, <em>on foot.</em></h2>
+      <div class="rule"></div>
+      <p class="lead">Tree-lined streets between Park Road and South End. Walk to South End, minutes from Uptown.</p>
+      <ul class="places" style="margin-top:36px">
+        <li>South End<span>Walkable</span></li>
+        <li>Park Road Shopping Center<span>Nearby</span></li>
+        <li>Freedom Park<span>Nearby</span></li>
+        <li>Uptown Charlotte<span>Minutes</span></li>
+        <li>Schools<span>Dilworth Elementary · Sedgefield Middle · Myers Park High</span></li>
+      </ul>
+      <p style="color:var(--mute);font-size:13px;margin-top:14px">School assignments change; verify with Charlotte-Mecklenburg Schools.</p>
+    </div>
+    <a class="fade mapcard" href="https://www.google.com/maps/search/?api=1&amp;query=3321+Auburn+Ave+Charlotte+NC+28209" target="_blank" rel="noopener">
+      <img src="../images/siteplan.jpg" alt="" loading="lazy">
+      <span class="pin"></span>
+      <span class="go eyebrow">Open in Maps →</span>
+    </a>
+  </div>
+</section>
+
+<section class="credits pad">
+  <div class="wrap">
+    <div class="eyebrow">Architecture · Design · Interiors · Build</div>
+    <h2 class="h2" style="margin-top:20px">Sell the life. <em>Credit the craft.</em></h2>
+    <div class="row">
+      <div><span class="eyebrow">Architecture</span><b>Brinkley Design</b></div>
+      <div><span class="eyebrow">Builder</span><b><a href="https://www.keenbuildingco.com" target="_blank" rel="noopener" style="text-decoration:none">KEEN Building Co ↗</a></b></div>
+      <div><span class="eyebrow">Smart Home</span><b>ALT3 Smart Homes</b></div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <div class="fade">
+      <div class="eyebrow red">Private Tours</div>
+      <h2 class="h2" style="margin-top:20px">See it <em>in person.</em></h2>
+      <div class="rule"></div>
+      <p class="lead">Tours by appointment. Ask your agent to schedule a private tour, and try the Josh.ai system while you're there.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>3321 Auburn Avenue, Charlotte, NC 28209. Renderings, plans, design selections and site plans are conceptual and for illustration only; KEEN Building Company has final say on all finishes. Smart home scope per ALT3 Smart Homes; prewired upgrades are optional and not included in the sale unless agreed in writing. Square footage per field measurement; lot size approximate per Mecklenburg County GIS. Information deemed reliable but not guaranteed; buyers should verify all details.</p>
+    <p>Listing information deemed reliable but not guaranteed. Equal Housing Opportunity.</p>
+  </div>
+</footer>
+
+<div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">×</button><div id="lbIn"></div></div>
+
+<script>
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+// loader + hero reveal
+window.addEventListener('load', () => {
+  setTimeout(() => { $('#loader').classList.add('gone'); document.body.classList.add('ready'); }, 900);
+});
+
+// nav
+const nav = $('#nav');
+const onScroll = () => nav.classList.toggle('solid', scrollY > innerHeight * 0.75);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+// reveals + count-ups
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add('in'); io.unobserve(e.target);
+}), { threshold: .15 });
+$$('.fade').forEach(el => io.observe(el));
+const co = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, end = +el.dataset.count, comma = el.dataset.comma, t0 = performance.now(), d = 1600;
+  const step = t => { const p = Math.min(1, (t - t0) / d), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+    el.textContent = comma ? v.toLocaleString() : v; if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step); co.unobserve(el);
+}), { threshold: .6 });
+$$('[data-count]').forEach(el => co.observe(el));
+
+// lightbox
+const lb = $('#lb'), lbIn = $('#lbIn');
+const openLB = html => { lbIn.innerHTML = html; lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+const closeLB = () => { lb.classList.remove('open'); lbIn.innerHTML = ''; document.body.style.overflow = ''; };
+lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('x')) closeLB(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+
+// hero loop (first seconds of the film; portrait crop on phones)
+const heroVid = $('#heroVid');
+heroVid.src = matchMedia('(max-aspect-ratio: 1/1)').matches ? '../images/hero-loop-m.mp4' : '../images/hero-loop.mp4';
+heroVid.play().catch(() => {});
+
+// film + reel play inline; one at a time
+const vids = $$('.vid');
+vids.forEach(box => {
+  const v = box.querySelector('video');
+  box.addEventListener('click', () => {
+    if (box.classList.contains('playing')) return;
+    vids.forEach(o => { if (o !== box) o.querySelector('video').pause(); });
+    if (!v.src) v.src = box.dataset.src;
+    v.controls = true; box.classList.add('playing'); v.play();
+  });
+  v.addEventListener('ended', () => { box.classList.remove('playing'); v.controls = false; v.load(); });
+});
+// pause when scrolled away
+const vo = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) e.target.querySelector('video').pause(); }), { threshold: .2 });
+vids.forEach(b => vo.observe(b));
+
+// site plan toggle
+$$('#spToggle button').forEach(b => b.onclick = () => {
+  $$('#spToggle button').forEach(x => x.classList.toggle('on', x === b));
+  $('#siteplan').classList.toggle('pool', b.dataset.v === 'pool');
+});
+
+// plans
+$$('#planTabs button').forEach(b => b.onclick = () => {
+  $$('#planTabs button').forEach(x => x.classList.toggle('on', x === b));
+  $('#planImg').src = b.dataset.p;
+});
+$$('#gallery figure').forEach(f => f.onclick = () => openLB(`<img src="${f.dataset.full}" alt="">`));
+// every photo: strip arrows + browsable lightbox with captions
+const chaps = $$('#photos .pchap'), chips = $$('#photos .pchips button');
+const pickCh = i => { chaps.forEach((c, j) => c.classList.toggle('on', j === i)); chips.forEach((b, j) => b.classList.toggle('on', j === i));
+  chaps[i].querySelector('.pstrip').scrollLeft = 0; chips[i].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' }); };
+chips.forEach((b, i) => b.onclick = () => pickCh(i));
+$$('#photos .parr button').forEach(b => b.onclick = () => { const st = $('#photos .pchap.on .pstrip');
+  st.scrollBy({ left: b.dataset.d * st.clientWidth * .8, behavior: 'smooth' }); });
+const PH = $$('#photos figure').map(f => ({ src: f.querySelector('img').dataset.full, cap: f.querySelector('figcaption').textContent, ch: f.closest('.pchap').dataset.ch, k: chaps.indexOf(f.closest('.pchap')) }));
+let phI = -1;
+const showPh = i => { phI = (i + PH.length) % PH.length; const p = PH[phI]; if (!chaps[p.k].classList.contains('on')) pickCh(p.k);
+  openLB(`<button class="nv p" aria-label="Previous">‹</button><figure class="lbfig"><img src="${p.src}" alt=""><figcaption><b>${p.ch} · ${phI + 1}/${PH.length}</b>${p.cap}</figcaption></figure><button class="nv n" aria-label="Next">›</button>`);
+  new Image().src = PH[(phI + 1) % PH.length].src; };
+$$('#photos figure').forEach((f, i) => f.onclick = () => showPh(i));
+lb.addEventListener('click', e => { if (e.target.classList.contains('nv')) { e.stopPropagation(); showPh(phI + (e.target.classList.contains('n') ? 1 : -1)); } }, true);
+addEventListener('keydown', e => { if (!lb.classList.contains('open') || !lbIn.querySelector('.lbfig')) return;
+  if (e.key === 'ArrowRight') showPh(phI + 1); if (e.key === 'ArrowLeft') showPh(phI - 1); });
+let tx = null; lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+lb.addEventListener('touchend', e => { if (tx === null || !lbIn.querySelector('.lbfig')) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 50) showPh(phI + (dx < 0 ? 1 : -1)); });
+const tf = $('#tourFrame');
+tf.onclick = () => { if (!tf.querySelector('iframe')) tf.insertAdjacentHTML('beforeend', `<iframe src="${tf.dataset.src}" allow="fullscreen; xr-spatial-tracking" allowfullscreen title="3D tour"></iframe>`); };
+$('#planView').onclick = () => openLB(`<img src="${$('#planImg').src}" alt="">`);
+
+// phone: call or text
+
+// Josh.ai demo — only features in the installed ALT3 scope
+const SCENES = {
+  jazz:   { said: '“Play jazz in the kitchen.”', reply: 'Playing jazz on the kitchen’s Paradigm speakers.',
+            rooms: { kitchen: [70, '#fff', 'Jazz · Sonos'], living: [40, '#fff', 'Lights 40%'] } },
+  dinner: { said: '“Dinner party.”', reply: 'Lutron scene on: dining set low and warm, living dimmed, music in the kitchen.',
+            rooms: { dining: [55, '#ffb35c', 'Hue warm · 55%'], living: [35, '#ffcf8a', 'Dimmed · 35%'], kitchen: [60, '#fff', 'Lights 60% · Music'], porch: [30, '#ffb35c', 'Hue amber'] } },
+  porch:  { said: '“Set the porch to warm amber.”', reply: 'Porch Hue lights set to warm amber.',
+            rooms: { porch: [80, '#ff9a3c', 'Hue amber · 80%'] } },
+  door:   { said: '“Who’s at the door?”', reply: 'Showing the video doorbell on the touchscreen. You can talk to them from here or your phone.',
+            rooms: { door: [100, '#9fd0ff', 'Live video'] } },
+  night:  { said: '“Goodnight.”', reply: 'Goodnight. Lights off through the house.',
+            rooms: {} }
+};
+const con = $('#console');
+function runScene(k) {
+  const s = SCENES[k];
+  $$('#cmds button').forEach(b => b.classList.toggle('on', b.dataset.c === k));
+  con.classList.add('talking'); $('#said').textContent = s.said; $('#reply').textContent = '…';
+  setTimeout(() => {
+    con.classList.remove('talking'); $('#reply').textContent = s.reply;
+    $$('.room').forEach(r => {
+      const v = s.rooms[r.dataset.r] || [0, '#fff', k === 'night' ? 'Off' : ''];
+      r.querySelector('.lv i').style.width = v[0] + '%';
+      r.querySelector('.lv i').style.background = v[1];
+      r.querySelector('span').textContent = v[2];
+      const g = r.querySelector('.glow');
+      g.style.background = `radial-gradient(circle at 30% 120%, ${v[1]}55, transparent 70%)`;
+      g.style.opacity = v[0] ? 1 : 0;
+    });
+  }, 1100);
+}
+$$('#cmds button').forEach(b => b.onclick = () => runScene(b.dataset.c));
+const ci = new IntersectionObserver(es => { if (es[0].isIntersecting) { runScene('jazz'); ci.disconnect(); } }, { threshold: .5 });
+ci.observe(con);
+</script>
+</body>
+</html>
