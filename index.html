@@ -328,7 +328,10 @@ footer p{max-width:1100px;margin-top:10px}
 #lb{position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:90;display:none;align-items:center;justify-content:center;padding:4vw}
 #lb.open{display:flex}
 #lb img{max-width:100%;max-height:100%;background:#fff}
-#lb iframe,#lb video{width:min(1400px,92vw);aspect-ratio:16/9;border:0;background:#000}
+#lb iframe{width:min(1400px,92vw);aspect-ratio:16/9;border:0;background:#000}
+#lb video{display:block;max-width:92vw;max-height:88vh;width:auto;height:auto;background:#000}
+.reel-btn{margin-top:4px;background:none;border:1px solid rgba(255,255,255,.7);color:#fff;font:inherit;letter-spacing:.18em;text-transform:uppercase;font-size:12px;padding:12px 22px;cursor:pointer;transition:background .3s,color .3s}
+.reel-btn:hover{background:#fff;color:#000}
 #lb .x{position:absolute;top:18px;right:24px;color:#fff;font-size:34px;background:none;border:0;cursor:pointer;font-family:var(--serif)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1;transform:none}}
 </style>
@@ -478,6 +481,7 @@ footer p{max-width:1100px;margin-top:10px}
     <div class="play"><i></i></div>
     <div class="h2">The <em>Film</em></div>
     <div class="eyebrow" id="filmLabel"><span class="soon">Premiering soon</span></div>
+    <button class="reel-btn" id="reelBtn" type="button" hidden>Watch the highlight reel</button>
   </div>
 </section>
 
@@ -687,7 +691,7 @@ footer p{max-width:1100px;margin-top:10px}
 
 <script>
 // ---- Film: paste a YouTube/Vimeo embed URL or an MP4 path when it's ready ----
-const FILM = { embed: "", mp4: "" };
+const FILM = { embed: "", mp4: "https://player.vimeo.com/progressive_redirect/playback/1242618123/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=fc1dfaffa0f45c825a00fba99fa418c2220d03f7e11088e7b6740555146d9d66", reel: "https://player.vimeo.com/progressive_redirect/playback/1242618179/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=1878689348b99fd6ab0ca7d93004b9627b88a4e89f5338879e542d0584d973ce" };
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 
@@ -724,12 +728,16 @@ lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.co
 addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
 
 // film
-if (FILM.mp4) $('#heroMedia').innerHTML = `<video src="${FILM.mp4}" autoplay muted loop playsinline poster="images/hero.jpg"></video>`;
+if (FILM.hero) $('#heroMedia').innerHTML = `<video src="${FILM.mp4}" autoplay muted loop playsinline poster="images/hero.jpg"></video>`;
 if (FILM.embed || FILM.mp4) $('#filmLabel').textContent = 'Watch the film';
 $('#film').addEventListener('click', () => {
   if (FILM.embed) openLB(`<iframe src="${FILM.embed}" allow="autoplay; fullscreen" allowfullscreen></iframe>`);
-  else if (FILM.mp4) openLB(`<video src="${FILM.mp4}" controls autoplay playsinline></video>`);
+  else if (FILM.mp4) openLB(`<video src="${FILM.mp4}" controls autoplay playsinline poster="images/hero.jpg"></video>`);
 });
+if (FILM.reel) {
+  const rb = $('#reelBtn'); rb.hidden = false;
+  rb.addEventListener('click', e => { e.stopPropagation(); openLB(`<video src="${FILM.reel}" controls autoplay playsinline></video>`); });
+}
 
 // design boards
 const boards = [['02','Kitchen'],['03','Laundry'],['04','Powder Bath'],['05','Primary Bath'],['06','Bath Two'],['07','Bonus Room'],['08','Bath Three'],['09','Bath Four'],['10','Bath Five'],['11','Office'],['12','Upstairs Powder Bath']];
