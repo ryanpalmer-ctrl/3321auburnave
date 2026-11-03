@@ -876,7 +876,8 @@ const paint = i => { cur = i; const f = pfig[i]; if (!f) return; const ci = +f.d
   chips.forEach((b, j) => b.classList.toggle('on', j === ci));
   $('#pch').textContent = f.dataset.chn; $('#pcap').textContent = f.querySelector('figcaption').textContent;
   $('#pct').textContent = (i - firstOf[ci] + 1) + ' / ' + (firstOf[ci + 1] > 0 ? firstOf[ci + 1] - firstOf[ci] : pfig.length - firstOf[ci]);
-  chips[ci].scrollIntoView({ block: 'nearest', inline: 'nearest' }); };
+  const bar = chips[ci].parentElement, c = chips[ci];  // scroll the chip row sideways only; scrollIntoView dragged the page down on load
+  if (c.offsetLeft < bar.scrollLeft || c.offsetLeft + c.offsetWidth > bar.scrollLeft + bar.clientWidth) bar.scrollTo({ left: c.offsetLeft - 16, behavior: 'smooth' }); };
 let pt; pst.addEventListener('scroll', () => { clearTimeout(pt); pt = setTimeout(() => paint(Math.round(pst.scrollLeft / pst.clientWidth)), 140); }, { passive: true });
 chips.forEach((b, i) => b.onclick = () => goPh(firstOf[i]));
 $('#photos .pnav.p').onclick = () => goPh(cur - 1);
