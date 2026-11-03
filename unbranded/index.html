@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src https://www.zillow.com">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>3321 Auburn Avenue</title>
 <meta name="description" content="3321 Auburn Avenue, Sedgefield, Charlotte. A new KEEN-built home with a Josh.ai smart home by ALT3.">
 <meta property="og:title" content="3321 Auburn Avenue · Sedgefield, Charlotte">
@@ -494,7 +496,6 @@ footer p{max-width:1100px;margin-top:10px}
     <div class="head fade"><div><div class="eyebrow red">3D Tour</div><h2 class="h2" style="margin-top:14px">Walk it <em>yourself.</em></h2></div>
       <p class="lead">Every room, at your own pace. Drag to look around, tap to move.</p></div>
     <div class="frame fade" id="tourFrame" data-src="https://www.zillow.com/view-imx/822d51aa-2c99-4818-a49b-13536fb84feb?wl=true&setAttribution=mls&initialViewType=pano"><img src="../images/photos/f/104.jpg" alt="3D tour of 3321 Auburn Avenue" loading="lazy"><div class="go"><b>3D</b><span class="eyebrow">Start the tour</span></div></div>
-    <p class="alt">Better on a big screen? <a href="https://www.zillow.com/view-imx/822d51aa-2c99-4818-a49b-13536fb84feb?wl=true&setAttribution=mls&initialViewType=pano" target="_blank" rel="noopener">Open the tour full screen</a>.</p>
   </div>
 </section>
 
@@ -565,36 +566,14 @@ footer p{max-width:1100px;margin-top:10px}
       <p class="lead" style="color:rgba(255,255,255,.75)">Theater-ready great room and upper den, primary suite, outdoor living, a future pool and extra camera runs. It’s all in the walls already.</p>
     </div>
     <div class="creds fade">
-      <div style="display:flex;align-items:center;gap:14px"><img src="../images/alt3-white.png" alt="" style="height:30px;width:auto"><span class="alt3mark" style="color:#fff">ALT3 SMART HOMES</span></div>
+      <div><span class="alt3mark" style="color:#fff">ALT3 SMART HOMES</span></div>
       <p style="margin-top:12px">Invisible by design · One system, one experience · Support that continues</p>
-      <p>Lutron HomeWorks Certified · Hunter Douglas Certified Partner · Veteran owned and operated · alt3smarthomes.com · (704) 326-1144</p>
+      <p>Lutron HomeWorks Certified · Hunter Douglas Certified Partner · Veteran owned and operated</p>
     </div>
   </div>
 </section>
 
-<section class="film pad" id="film" aria-label="The film">
-  <div class="wrap">
-    <div class="head fade">
-      <div><div class="eyebrow red">Watch</div><div class="h2">The <em>Film</em></div></div>
-      <p>A walk through 3321 Auburn, from the curb to the touchscreen.</p>
-    </div>
-    <div class="vid wide fade" data-src="https://player.vimeo.com/progressive_redirect/playback/1242618123/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=fc1dfaffa0f45c825a00fba99fa418c2220d03f7e11088e7b6740555146d9d66">
-      <video playsinline preload="none" poster="../images/film-poster.jpg"></video>
-      <div class="ov"><div class="play"><i></i></div><span class="eyebrow">Play the film · 1:39</span></div>
-    </div>
-    <div class="reel-row">
-      <div class="vid tall fade" data-src="https://player.vimeo.com/progressive_redirect/playback/1242618179/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&signature=1878689348b99fd6ab0ca7d93004b9627b88a4e89f5338879e542d0584d973ce">
-        <video playsinline preload="none" poster="../images/reel-poster.jpg"></video>
-        <div class="ov"><div class="play"><i></i></div><span class="eyebrow">Play · 1:14</span></div>
-      </div>
-      <div class="txt fade">
-        <div class="eyebrow red">Highlight reel</div>
-        <div class="h3">The house, <em>in a minute.</em></div>
-        <p>The quick version: the smart-home touches, the finishes and the rooms that matter most.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="features pad" id="features">
   <div class="wrap">
@@ -674,10 +653,6 @@ footer p{max-width:1100px;margin-top:10px}
     </div>
     <div class="w-foot fade">
       <p class="quote">KEEN is family-owned and based right here in Charlotte, so warranty service isn’t a call center. It’s the team that built the house.</p>
-      <div class="btns" style="margin-top:0">
-        <a class="btn solid" href="https://www.keenbuildingco.com/warranty" target="_blank" rel="noopener">View KEEN’s full warranty</a>
-        <a class="btn" href="https://www.keenbuildingco.com" target="_blank" rel="noopener">Visit KEEN Building Co</a>
-      </div>
     </div>
     <p style="color:var(--mute);font-size:13px;margin-top:26px">Warranty provider, terms and coverage levels provided in full at contract.</p>
   </div>
@@ -734,11 +709,10 @@ footer p{max-width:1100px;margin-top:10px}
       </ul>
       <p style="color:var(--mute);font-size:13px;margin-top:14px">School assignments change; verify with Charlotte-Mecklenburg Schools.</p>
     </div>
-    <a class="fade mapcard" href="https://www.google.com/maps/search/?api=1&amp;query=3321+Auburn+Ave+Charlotte+NC+28209" target="_blank" rel="noopener">
+    <div class="fade mapcard">
       <img src="../images/siteplan.jpg" alt="" loading="lazy">
       <span class="pin"></span>
-      <span class="go eyebrow">Open in Maps →</span>
-    </a>
+      </div>
   </div>
 </section>
 
@@ -748,7 +722,7 @@ footer p{max-width:1100px;margin-top:10px}
     <h2 class="h2" style="margin-top:20px">Sell the life. <em>Credit the craft.</em></h2>
     <div class="row">
       <div><span class="eyebrow">Architecture</span><b>Brinkley Design</b></div>
-      <div><span class="eyebrow">Builder</span><b><a href="https://www.keenbuildingco.com" target="_blank" rel="noopener" style="text-decoration:none">KEEN Building Co ↗</a></b></div>
+      <div><span class="eyebrow">Builder</span><b>KEEN Building Co</b></div>
       <div><span class="eyebrow">Smart Home</span><b>ALT3 Smart Homes</b></div>
       
     </div>
