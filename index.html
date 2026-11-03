@@ -359,7 +359,6 @@ footer p{max-width:1100px;margin-top:10px}
   <div class="links">
     <a href="#home">The Home</a>
     <a href="#smart">Smart Home</a>
-    <a href="#design">Design</a>
     <a href="#plans">Plans</a>
     <a href="#hood">Sedgefield</a>
     <a class="cta" href="#contact">Private Tour</a>
@@ -587,15 +586,6 @@ footer p{max-width:1100px;margin-top:10px}
   </div>
 </section>
 
-<section class="design pad" id="design">
-  <div class="wrap head">
-    <div class="fade"><div class="eyebrow red">Design Intent by KEEN</div><h2 class="h2" style="margin-top:20px">Room by <em>room.</em></h2></div>
-    <div class="rail-ctl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
-  </div>
-  <div class="rail" id="rail"></div>
-  <p class="wrap" style="color:var(--mute);font-size:14px">Selections are directional. KEEN Building Co has final say on all finishes.</p>
-</section>
-
 <section class="band">
   <div class="img"><img src="images/hero.jpg" alt="" style="object-position:20% 50%"><div class="tag" style="left:16px;bottom:16px">Rendering · conceptual</div></div>
   <div class="txt fade">
@@ -768,18 +758,6 @@ vids.forEach(box => {
 // pause when scrolled away
 const vo = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) e.target.querySelector('video').pause(); }), { threshold: .2 });
 vids.forEach(b => vo.observe(b));
-
-// design boards
-const boards = [['02','Kitchen'],['03','Laundry'],['04','Powder Bath'],['05','Primary Bath'],['06','Bath Two'],['07','Bonus Room'],['08','Bath Three'],['09','Bath Four'],['10','Bath Five'],['11','Office'],['12','Upstairs Powder Bath']];
-const rail = $('#rail');
-rail.innerHTML = boards.map(([n, t], i) => `<div class="board"><figure><img src="images/board-${n}.jpg" alt="${t} design board" loading="lazy" draggable="false"></figure><figcaption><b>${t}</b><span class="eyebrow" style="color:var(--mute)">${String(i + 1).padStart(2, '0')} / ${boards.length}</span></figcaption></div>`).join('');
-const slide = dir => rail.scrollBy({ left: dir * rail.querySelector('.board').offsetWidth * 1.03, behavior: 'smooth' });
-$('#prev').onclick = () => slide(-1); $('#next').onclick = () => slide(1);
-let down = false, sx = 0, sl = 0, moved = 0;
-rail.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = 0; sx = e.clientX; sl = rail.scrollLeft; rail.classList.add('drag'); });
-addEventListener('pointermove', e => { if (!down) return; moved = Math.abs(e.clientX - sx); rail.scrollLeft = sl - (e.clientX - sx); });
-addEventListener('pointerup', () => { down = false; rail.classList.remove('drag'); });
-rail.addEventListener('click', e => { const b = e.target.closest('.board'); if (!b || moved > 6) return; openLB(`<img src="${b.querySelector('img').src}" alt="">`); });
 
 // site plan toggle
 $$('#spToggle button').forEach(b => b.onclick = () => {
